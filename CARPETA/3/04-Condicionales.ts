@@ -86,6 +86,120 @@ if(seAtrasoAClase){
 // fin del programa
 
 
+//TRUTY
+const nombreVacio = "";
+
+if(""){
+
+  console.log("Truty");// Truty       
+}else{
+    console.log("Falsy");  
+
+}
+
+//FALSY
+
+
+if("abc"){
+
+    console.log("Truty");     
+  }else{
+      console.log("Falsy");  
+  
+  }
+  
+
+// Truty 
+
+
+  if(-1,032){
+
+    console.log("Truty");     
+  }else{
+      console.log("Falsy");  
+  
+  }
+
+
+//FALSY
+
+const  nombreVacio = 0;
+if(null){
+
+    console.log("Truty");     
+  }else{
+      console.log("Falsy");  
+  
+  }
+
+
+
+//FALSY
+
+const  nombreVacio = 0;
+if(null){
+
+    console.log("Truty");     
+  }else{
+      console.log("Falsy");  
+  
+  }
+
+//FALSY
+
+  if(undefined){
+
+    console.log("Truty");     
+  }else{
+      console.log("Falsy");  
+  
+  }
+
+
+
+
+const calculo = "sumar"; // sumar restar multiplicar dividir
+switch(calculo){
+    case "sumar"
+    //code 
+    break; // es para dejar de comparar los distintos casos ya que si llego ahi significa q ya encontro lo que buscaba
+
+    case "restar"
+    //code
+    break;
+    case "multiplicar"
+    //code
+    break;
+    case "dividir"
+    //code
+    break;
+
+    default:// para dejar de comparar cualquier otra cosa
+}
+
+
+
+
+
+const añosString = prompt("Ingrese un numero se convertira a entero");
+const años = parseInt(añosString);
+
+if(años <= 6){
+    console.log("GUAGUA");
+} if(años <= 18 && años > 6){
+    console.log("GUAMBRA");
+} if(años > 18 && años <= 65){
+    console.log("LONGO");
+} if (años > 65 && años <= 110){
+    console.log("RUCO");   
+}if(años > 110){
+    console.log("No puede ser tan viejo!!!" )
+}if(años < 0){
+    console.log("Que, ¿cada año te  haces mas joven? NUMEROS POSITIVOS");
+}
+
+
+
 
 
 
