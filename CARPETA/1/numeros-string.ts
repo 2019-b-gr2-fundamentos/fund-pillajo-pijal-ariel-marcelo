@@ -1,6 +1,6 @@
-const numeroUno = 1; // camelCase
-const numero_dos = 2;
-let resultado = 0;
+const numero_Uno = 1; // camelCase
+const numero_Dos = 2;
+let resultados = 0;
 //SUMA
 resultado = 1 + 2;
 // RESTAR
