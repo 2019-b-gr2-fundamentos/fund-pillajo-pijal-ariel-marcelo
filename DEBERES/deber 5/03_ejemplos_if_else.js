@@ -1,9 +1,6 @@
 // Escribir 3 ejemplos de switch
 ///////if
-//  Mira tu horoscopo
-// Escribe tu nombre y tu signo zodiacal
-// Escribe el nombre y signo zodiacal  de tu poli Crush
-// se imprime tus resultados  de compatibilidad 
+
 
 //////////if 
 // En que ciudad del pais que quiero vivir  se ajusta a mis ingresos  mis ingresos 
