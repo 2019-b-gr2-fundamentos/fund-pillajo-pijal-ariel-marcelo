@@ -1,4 +1,4 @@
-var edad = 30; 
+var edad = 30; //se ha cambiado de javascript a typescript 
 let edad = 30; 
 const IVA = 12;
 IVA = 14; 
