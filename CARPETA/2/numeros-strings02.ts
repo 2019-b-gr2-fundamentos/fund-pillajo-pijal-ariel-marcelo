@@ -1,6 +1,9 @@
 const numeroUno = 1; // camelCase
 const numero_dos = 2;
 let resultado = 0;
+
+resultado = numeroUno + numero_dos;
+console.log("Tu reseultado es: " + resultado);
 //SUMA
 resultado = 1 + 2;
 // RESTAR

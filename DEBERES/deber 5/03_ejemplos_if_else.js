@@ -63,10 +63,4 @@ switch(Pais){
 // test de personalidad
 // responde estas preguntas con un si = 1 o con un No = 0
 
-let RespuestasSi 
-let Acumulador = 0;
 
-if(Acumulador > ){
-
-
-}
