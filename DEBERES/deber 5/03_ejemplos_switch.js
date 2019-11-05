@@ -1,7 +1,7 @@
 // escribir tres ejemplos de  switch 
 
 ////switch
-// bienvenido en que categoria encaja su articulo?
+// bienvenido en que categoria encaja su gusto?
 // seleccione una de ellas donde cada una esta asociada a su propio case 
 // * lista de categorias 
 // seleccione una categoria
@@ -157,7 +157,7 @@ if(inicio == 1){
 
 }
 
-
+///////switch
 // cuanto tiempo libre tiene un politecnico
 
 const list = "Calcular cuantas horas libres tienes a:" + "\n" +"1.- semana" +  "\n" + "2.- mes"

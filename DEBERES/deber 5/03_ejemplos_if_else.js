@@ -1,5 +1,21 @@
 // Escribir 3 ejemplos de switch
+
 ///////if
+// Electrocutado
+/*  
+ingrese su edad, sexo , peso y determine la probable resistencia de esta persona
+Valor máximo: 3.000 Ohmios
+Valor medio: 1.000/2.000 Ohmios
+Valor mínimo: 500 Ohmios
+*/ 
+
+
+
+
+
+
+
+
 
 
 //////////if 
