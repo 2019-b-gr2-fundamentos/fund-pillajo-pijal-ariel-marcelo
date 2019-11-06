@@ -49,24 +49,28 @@ console.log (mensaje +  "1\t\t\t 222\r\r\r 3\n" +  saludo);
 //console.log(nombreLongitud.toUpperCase());
 //console.log(nombreLongitud.toLowerCase());
 
-// buscar una letra
-//console.log(nombreLongitud);
-//console.log(nombreLongitud.replace("x","o"));
-//console.log(nombreLongitud);
-//console.log(nombreLongitud.replace("a","o"));
-//console.log(nombreLongitud);
-//console.log(nombreLongitud.replace("e","i"));
-//console.log(nombreLongitud);
-//console.log(nombreLongitud.search("z")); // -1 si no se encuentra 
-//console.log(nombreLongitud.search("\r")); // revela la poicion contando desde el cero, cuenta por caracteres
+/*
+ buscar una letra
+console.log(nombreLongitud);
+console.log(nombreLongitud.replace("x","o"));
+console.log(nombreLongitud);
+console.log(nombreLongitud.replace("a","o"));
+console.log(nombreLongitud);
+console.log(nombreLongitud.replace("e","i"));
+console.log(nombreLongitud);
+console.log(nombreLongitud.search("z")); // -1 si no se encuentra 
+console.log(nombreLongitud.search("\r")); // revela la poicion contando desde el cero, cuenta por caracteres
 
-//console.log(nombreLongitud.slice(0,7)); // recorta de la posicion 0 a 7
-//console.log(nombreLongitud.indexOf("x")); // igual que serch
-//console.log(nombreLongitud.includes(""));// espacio existe? siiii
-//console.log(nombreLongitud.includes("x"));// devuelve boleanos true or false
-//console.log(nombreLongitud.endsWith("x"));//booleanao termina con...
-//console.log(nombreLongitud.startsWith("A"));//booleano comienza con...
+*/
 
+/*
+console.log(nombreLongitud.slice(0,7)); // recorta de la posicion 0 a 7
+console.log(nombreLongitud.indexOf("x")); // igual que serch
+console.log(nombreLongitud.includes(""));// espacio existe? siiii
+console.log(nombreLongitud.includes("x"));// devuelve boleanos true or false
+console.log(nombreLongitud.endsWith("x"));//booleanao termina con...
+console.log(nombreLongitud.startsWith("A"));//booleano comienza con...
+*/
 
 
 
