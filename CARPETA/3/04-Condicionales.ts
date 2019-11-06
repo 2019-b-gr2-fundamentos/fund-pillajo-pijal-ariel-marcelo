@@ -25,7 +25,7 @@ if (casado != true){ // (expresion) => boolean
 }
 
 
-if (casado != false){ // (expresion) => boolean
+if(casado =! false){ // (expresion) => boolean
     console.log("Si estoy casado");
 }else{
     console.log("No estoy casado");
