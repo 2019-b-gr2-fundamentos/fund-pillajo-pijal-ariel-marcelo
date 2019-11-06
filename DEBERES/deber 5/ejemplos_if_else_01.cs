@@ -33,7 +33,7 @@ namespace EscojeUnPais{
           Sueldo = float.Parse(Console.ReadLine());
 
 
-           if(Eleccion == "Brasil"|"brasil"|"brazil"|"Brazil"){
+           if(Eleccion == "Brasil"|Eleccion =="brasil"|Eleccion =="brazil"|Eleccion =="Brazil"){
                 if(Sueldo >= 480 ){
                 Console.WriteLine("Tu podria vivir en las ciudades de Brasilia, Rio de Janeiro o Sao pablo");
                 Console.ReadKey();
@@ -44,7 +44,7 @@ namespace EscojeUnPais{
                 Console.WriteLine("Tendras problemas para vivir en Brasil mejor piensa un mejor destino"); 
                 Console.ReadKey(); 
                 }
-           }if(Eleccion == "Mexico"|"Méxxico"|"mexico"|"méxico"){
+           }if(Eleccion == "Mexico"|Eleccion == "Méxxico"|Eleccion == "mexico"|Eleccion == "méxico"){
                if(Sueldo >= 480 ){
                Console.WriteLine("Tu podria vivir en Monterrey, Cancun, Queretaro, Guadalajara sin problema ");
                Console.ReadKey();
@@ -57,7 +57,7 @@ namespace EscojeUnPais{
               }
 
 
-           }if(Eleccion == "Colombia"|"colombia"){
+           }if(Eleccion == "Colombia"|Eleccion == "colombia"){
                if(Sueldo >= 480 ){
                 Console.WriteLine("Tu podria vivir en Bogota  ");
                 Console.ReadKey();
