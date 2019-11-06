@@ -29,65 +29,77 @@ namespace EscojeUnPais{
         "\n3.-Dulce\n");
         Categoria = Int16.Parse(ReadLine());
          
-         switch(Categoria){
-           case 1 :
+          switch(Categoria){
+            case 1 :
              
-             Console.WriteLine("Genial apuesto que te veras bien despues\n"+
-             "\n1.-Ensalada a la Diabla" + 
-             "\n2.-champiñones curtidos" + 
-             "\n3.-Pica que te llenas");
-              Plato = Int16.Parse(ReadLine());
-              switch(Plato){
+               Console.WriteLine("Genial apuesto que te veras bien despues\n"+
+               "\n1.-Ensalada a la Diabla" + 
+               "\n2.-champiñones curtidos" + 
+               "\n3.-Pica que te llenas");
+               Plato = Int16.Parse(ReadLine());
+               switch(Plato){
                   case 1:
 
-                  Console.WriteLine("Disfruta de tu Ensalada a la diabla su costo es de $ 6,99 gracias por preferirnos");
-
+                   Console.WriteLine("Disfruta de tu Ensalada a la diabla su costo es de $ 6,99 gracias por preferirnos");
+                   Console.ReadKey();
                   break;
 
                   case 2:
 
-                  Console.WriteLine("Disfruta de champiñones curtidos su costo es de $ 8,99 gracias por preferirnos");
-
+                   Console.WriteLine("Disfruta de champiñones curtidos su costo es de $ 8,99 gracias por preferirnos");
+                   Console.ReadKey();
                   break;
 
                   case 3:
-                  Console.WriteLine("Disfruta de Pica que te llenas su costo es de $ 6,50 gracias por preferirnos");
-        
+                   Console.WriteLine("Disfruta de Pica que te llenas su costo es de $ 6,50 gracias por preferirnos");
+                   Console.ReadKey();
 
                   break;
 
                   default:
-                  Console.WriteLine("No se ha selleccionado una opcion valida");
+                   Console.WriteLine("No se ha selleccionado una opcion valida");
+                   Console.ReadKey();
+                   break;
+               }
 
-              }
+              break;
 
-           break;
-           case 2 :
-           Console.WriteLine("Solo se vive una vez\n"+
-             "\n1.-Hamburguesa" + 
-             "\n2.-Pizza" + 
-             "\n3.-Salchipapas");
-              Plato = Int16.Parse(ReadLine());
-              switch(Plato){
+
+
+            case 2 :
+               Console.WriteLine("Solo se vive una vez\n"+
+               "\n1.-Hamburguesa" + 
+               "\n2.-Pizza" + 
+               "\n3.-Salchipapas");
+                Plato = Int16.Parse(ReadLine());
+               switch(Plato){
                   case 1:
                    Console.WriteLine("Disfruta de hamburguesa su costo es de $ 3,99 gracias por preferirnos");
+                   Console.ReadKey();
                   break;
 
                   case 2:
                    Console.WriteLine("Disfruta de pizza su costo es de $ 2,85 gracias por preferirnos");
+                   Console.ReadKey();
                   break;
 
                   case 3:
                    Console.WriteLine("Disfruta de salchipapa su costo es de $ 1,50 gracias por preferirnos");
+                   Console.ReadKey();
                   break;
 
                   default:
                    ConsoleWrite("No se ha seleccionado una opcion valida");
+                   Console.ReadKey();
                   break;
-                 }
-           break;
+                }
+
+             break;
+
+
+
            case 3:
-           Console.WriteLine("MMM......\n"+
+             Console.WriteLine("MMM......\n"+
              "\n1.-Pasteñ" + 
              "\n2.-Helado" + 
              "\n3.-Gelatina");
@@ -96,21 +108,27 @@ namespace EscojeUnPais{
               switch(Plato){
                   case 1:
                    Console.WriteLine("Disfruta de  Pastel su costo es de $ 2,25 gracias por preferirnos");
+                   Console.ReadKey();
                   break;
                   
                   case 2:
                    Console.WriteLine("Disfruta de Helado su costo es de $ 4,20 gracias por preferirnos");
+                   Console.ReadKey();
                   break;
 
                   case 3:
                     Console.WriteLine("Disfruta de Gelatina su costo es de $ 0,90 gracias por preferirnos");
+                    Console.ReadKey();
                   break;
 
                   default:
                   
                     ConsoleWrite("No se ha seleccionado una opcion valida");
+                    Console.ReadKey();
                   break;
-                 }
+                  
+               }  
+
            break;
          }
 

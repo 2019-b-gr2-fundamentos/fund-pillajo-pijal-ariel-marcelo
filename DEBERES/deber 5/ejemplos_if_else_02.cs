@@ -41,8 +41,10 @@ namespace EscojeUnPais{
                    Resultado = Resultado + ((importanciaPregunta*Repuesta)/10);
                    if(Resultado > 2){
                      Console.WriteLine(RespuestaA);
+                     Console.ReadKey();
                    }else{
                      Console.WriteLine(RespuestaB);
+                     Console.ReadKey();
                    }
                 }else{
 
