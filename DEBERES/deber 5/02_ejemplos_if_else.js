@@ -1,4 +1,4 @@
-//////////if 
+
 // En que ciudad del pais que quiero vivir  se ajusta a mis ingresos  mis ingresos 
 // Quiere mudarse a un pais de la lista? si es asi ecriba el nombre del pais y le mostraremos 
 // la ciudad con menor costo de vida  
@@ -12,7 +12,7 @@ const ListaPais = "1.- Brasil" + "\n" + "2.- Mexico" + "\n" + "3.- Colombia"
 let PaisString = prompt("En que pais de la lista quieres vivvir ?" + "\n" +  ListaPais);
 let Pais = Number(PaisString);
 
-let SueldoString = prompt("De cuanto capital dipones mensualmente en dolares a dolares");  
+let SueldoString = prompt("De cuanto capital dipones mensualmente en dolares ");  
 let Sueldo = Number(SueldoString);
 switch(Pais){
     case 1 :
