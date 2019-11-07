@@ -1,5 +1,5 @@
 
-
+/*
 
 let VecesQueHeComido = 0;
 
@@ -29,7 +29,7 @@ do{
 
 } while(VecesQueHeComido <= 4)
 
-
+*/
 
 /*
 
@@ -53,36 +53,39 @@ let AnalisisSoxioeconomico =0;
 let Algebra = 0;
 let Compiladores = 0;
 
-let EsImpar = DeberesRealizados%
 
- do{
+while(DeberesRealizados < Deberes){
 
-    let EsMultiplosde3 = DeberesRealizados % 3;
-    let Espar = DeberesRealizados % 2;
-    let Esimpar = Espar != 0;
+   DeberesRealizados = DeberesRealizados + 1;
+   let EsMultiplode3 = DeberesRealizados % 3 == 0;
+   let EsNumeroPar = DeberesRealizados % 2 == 0;
+   let EsNumeroImpar = DeberesRealizados % 2 != 0;
 
 
-    if(EsMultiplosde3 != 0){
+
+    if(EsMultiplode3){
   
          Compiladores = Compiladores + 1;
-         DeberesRealizados = DeberesRealizados + 1;
-
-    }else if(Espar == 0){ //if anidados significa que solo se cumplira uno de estos no ambos
+         
+    }else if(EsNumeroPar){ //if anidados significa que solo se cumplira uno de estos no ambos
         
          Algebra = Algebra +1;
-         DeberesRealizados = DeberesRealizados +1;
+         
 
-    }else if(Esimpar){
+    }else if(EsNumeroImpar){
 
          AnalisisSoxioeconomico = AnalisisSoxioeconomico + 1;
-         DeberesRealizados = DeberesRealizados + 1;
+        
 
     }
 
 
-} while(Deberes <= 1000)
+} 
 
-console.log("Analisis soscioeconomico = " + AnalisisSoxioeconomico);
 
-console.log('Hice ${analisis} deberes de Analisis')
+
+console.log(' Hice ' + AnalisisSoxioeconomico  + '  deberes de Analisis ');
+console.log(' Hice ' + Algebra + ' deberes de Algebra');
+console.log(' Hice ' + Compiladores + ' deberes de Compiladores ');
+
 //template string
