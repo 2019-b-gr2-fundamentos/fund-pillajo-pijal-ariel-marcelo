@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EscojeUnPais{
+namespace While{
 
-    class ejemplos_if_else_01{
+    class While{
         public static void main(string[] args){
 
             float Deberes = 1000;

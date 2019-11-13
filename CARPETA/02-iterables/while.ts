@@ -47,7 +47,7 @@ do{
 1)si es muñtiplo de 3 -> aumentamos compildores (con el mod si es =! de 0 entonces 
 */
 
-const Deberes = 1000;
+const Tareas = 1000;
 let DeberesRealizados = 0;
 let AnalisisSoxioeconomico =0;
 let Algebra = 0;
@@ -58,7 +58,7 @@ let Fisica = 0;
 let Ingles = 0;
 
 
-while(DeberesRealizados < Deberes){
+while(DeberesRealizados < Tareas){
 
    DeberesRealizados = DeberesRealizados + 1;
    let EsMultiplode3 = DeberesRealizados % 3 == 0;
