@@ -92,3 +92,15 @@ console.log(' Hice ' + Calculo + ' deberes de Calculo ');
 console.log(' Hice ' + Fisica + ' deberes de Fisica ');
 console.log(' Hice ' + Ingles + ' deberes de Ingles ');
 //template string 
+
+
+
+
+
+
+
+
+
+
+
+//
