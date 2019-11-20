@@ -44,15 +44,27 @@ console.log(floron);
 
 
 // EXISTE EL fLORON???
+let arregloFloron1 = [0,0,0,1,0];
+    let existeFloron1 = false;
+    for(let i = 0; i<5; i++){
 
-let arregloFloron = [0,0,0,0,1];
-    let existeFloron = false;
+    if(arregloFloron1[i] == 1){ 
+    existeFloron1 = true;
+  }
+}
+
+
+// por esta razon no ponemos un else seguido del if nos votaria falso
+let arregloFloron = [0,0,0,1,0];
+    let existeFloron;
     
 for(let i = 0; i<5; i++){
 
 
 if(arregloFloron[i] == 1){ 
     existeFloron = true;
+  }else{
+      existeFloron = false
   }
 }
 
