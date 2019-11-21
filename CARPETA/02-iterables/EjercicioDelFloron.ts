@@ -19,7 +19,7 @@ console.log(" Arreglo Posicion" + indice +  " = " + arreglo[indice] );
 }
 
 
-*/
+
 
 /*
 
