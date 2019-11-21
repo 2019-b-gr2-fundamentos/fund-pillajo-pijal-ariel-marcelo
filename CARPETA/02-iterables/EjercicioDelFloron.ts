@@ -5,7 +5,7 @@
 // Ej: [0,0,0,0,0] No es valido
 // Ej [0, 0, 0, 1, 0]
 
-/*
+
 
 const arreglo = [];
 
@@ -17,6 +17,7 @@ console.log(" Arreglo Posicion" + indice +  " = " + arreglo[indice] );
 
 
 }
+
 
 */
 
@@ -67,6 +68,7 @@ if(arregloFloron[i] == 1){
       existeFloron = false
   }
 }
+
 
 
 
