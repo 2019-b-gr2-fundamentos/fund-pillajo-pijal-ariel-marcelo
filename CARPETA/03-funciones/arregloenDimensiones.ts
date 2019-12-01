@@ -48,47 +48,76 @@ function productoCruz(vectores: number[][]): number[]{
 
 }
 */
-
-let matriz =  [
+const matriz = [
     [0, 1, 2, 3, 4],
     [4, 5, 6, 7, 8]
-]; 
-let suma = 0;
-let longitud = matriz[0].length;
-console.log(longitud);
+];
+let tamaño = matriz[0].length;
+let indice2 = matriz[0].length - 1;
+let resultado;
+let CopiarArreglo = matriz[0];
+let acumulador = 0;
+let suma2 = 0, suma1;
+for (var indice = 0; indice < tamaño; indice++) {
 
-for(let indice = 0; indice < longitud; indice++){
 
     let valor1 = matriz[0][indice];
+    let valor2 = matriz[1][indice2];
 
-    matriz.length = matriz.length - 1;
+    suma1 = suma2;
+ 
+    acumulador =  (valor1 * valor2);
+  
+    suma2 = acumulador + suma1;
 
-    let valor2 = matriz[1][matriz.length];
+    
+    if (indice == tamaño - 1) {
+        CopiarArreglo[indice] = suma2;
+    }
+    else {
+        CopiarArreglo[indice] = 0;
+    }
 
-    suma = suma + (valor1 * valor2);
+    indice2--;
+    
+}
+console.log("El resultado de tu producto Cruz es: [ " + CopiarArreglo + " ]");
+
+
+/*
+let acumuladores
+
+for(acumuladores = 0; acumuladores < 8; acumuladores++){
+
+    acumuladores = acumuladores +1;
 
 }
 
-console.log("El resultado de tu producto Cruz es: " + suma);
+console.log(acumuladores);
 
+console.log("El resultado de tu producto Cruz es: " + resultado);
+*/
+/*
 
-
-
-
-const  matriz =  [
-    [0, 1, 2, 3, 4],
+const  matriz = [
+    [0, 1, 2, 3, 4],   
     [4, 5, 6, 7, 8]
 ]; 
+
+
+
+
+/*
 let indice2
-let  longitud = matriz[0].length;
-const no = longitud;
-console.log("longitud de " + matriz[0].length);
-for(let indice = 0; indice <= longitud; indice++){
+leet tamaño = matriz[0].length;
+const noet tamaño;
+console.loet tamaño de " + matriz[0].length);
+for(let indice = 0; indice et tamaño; indice++){
 indice2 =  matriz[0].length  - indice;
  console.log("sACA EL VALOR " + indice2)
  console.log("yo soy el indice :" + indice);
 
 }
 
-console.log("El resultado de tu producto Cruz es: " + suma);
 
+*/

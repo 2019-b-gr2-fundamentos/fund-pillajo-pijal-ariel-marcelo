@@ -51,13 +51,70 @@ var matriz = [
     [0, 1, 2, 3, 4],
     [4, 5, 6, 7, 8]
 ];
-var suma = 0;
-var longitud = matriz[0].length;
-for (var indice = 0; indice < longitud; indice++) {
-    var valor1 = matriz[0][indice]
-    matriz.length = matriz.length - 1;
-    var valor2 = matriz[1][matriz.length]
-    suma = suma + (valor1 * valor2);
-}
-console.log("El resultado de tu producto Cruz es: " + suma);
+var tamaño = matriz[0].length;
+var indice2 = matriz[0].length - 1;
+var resultado;
+var CopiarArreglo = matriz[0];
+var acumulador = 0;
+var suma2 = 0, suma1;
+for (var indice = 0; indice < tamaño; indice++) {
 
+
+    var valor1 = matriz[0][indice];
+    var valor2 = matriz[1][indice2];
+
+    suma1 = suma2;
+ 
+    acumulador =  (valor1 * valor2);
+  
+    suma2 = acumulador + suma1;
+
+    
+    if (indice == tamaño - 1) {
+        CopiarArreglo[indice] = suma2;
+    }
+    else {
+        CopiarArreglo[indice] = 0;
+    }
+
+    indice2--;
+    
+}
+console.log("El resultado de tu producto Cruz es: [ " + CopiarArreglo + " ]");
+/*
+let acumuladores
+
+for(acumuladores = 0; acumuladores < 8; acumuladores++){
+
+    acumuladores = acumuladores +1;
+
+}
+
+console.log(acumuladores);
+
+console.log("El resultado de tu producto Cruz es: " + resultado);
+*/
+/*
+
+const  matriz = [
+    [0, 1, 2, 3, 4],
+    [4, 5, 6, 7, 8]
+];
+
+
+
+
+/*
+let indice2
+leet tamaño = matriz[0].length;
+const noet tamaño;
+console.loet tamaño de " + matriz[0].length);
+for(let indice = 0; indice et tamaño; indice++){
+indice2 =  matriz[0].length  - indice;
+ console.log("sACA EL VALOR " + indice2)
+ console.log("yo soy el indice :" + indice);
+
+}
+
+
+*/

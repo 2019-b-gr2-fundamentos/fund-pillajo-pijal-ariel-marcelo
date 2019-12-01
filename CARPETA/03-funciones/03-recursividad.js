@@ -27,7 +27,7 @@ const arregloString: string[] =  ["a", "b", "c"];
 const arregloBoolean: boolean[] = [true, false, false]
 
 */
-//const arreglosNumeros = [1, 2, 3] 
+var arreglosNumeros = [1, 2, 3] 
 function arreglo(arreglosNumeros, indice) {
     if (indice == 2) {
         console.log("Se termino");
