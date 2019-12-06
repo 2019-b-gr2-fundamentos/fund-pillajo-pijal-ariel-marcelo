@@ -16,11 +16,11 @@ Programa
 7) repite este proceso hasta el final de cadena dando un arreglo1 N+1
 */
 var arreglo2 = [0, 1, 2, 3, 4, 5];
-var Borrare = 0;
+var BorrarePosicion = 0;
 var DatoAGuardar = 0;
 var RetenerDato;
 var longitud = arreglo2.length;
-for (var indice = Borrare; indice <= longitud; indice++) {
+for (var indice = BorrarePosicion; indice <= longitud; indice++) {
     if (indice < longitud) {
         RetenerDato = arreglo2[indice];
         arreglo2[indice] = DatoAGuardar;

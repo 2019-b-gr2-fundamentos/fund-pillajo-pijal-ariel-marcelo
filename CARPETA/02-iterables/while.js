@@ -1,4 +1,4 @@
-/*
+
 
 let VecesQueHeComido = 0;
 
@@ -28,7 +28,7 @@ do{
 
 } while(VecesQueHeComido <= 4)
 
-*/
+
 /*
 
 1 Analisis Socioeconomico

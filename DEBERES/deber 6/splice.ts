@@ -18,13 +18,13 @@ Programa
 */
 
 const arreglo2 = [0,1,2,3,4,5]; 
-let Borrare:number = 0;
+let BorrarePosicion:number = 0;
 let DatoAGuardar = 0;
 let RetenerDato;
 let longitud = arreglo2.length;
 
 
-for(let indice = Borrare; indice <= longitud; indice++){
+for(let indice = BorrarePosicion; indice <= longitud; indice++){
 
      if(indice < longitud){
         RetenerDato = arreglo2[indice];
