@@ -40,13 +40,14 @@ for(let indice = Borrare; indice <= longitud; indice++){
 }
 
 // Borrar
-/*
+
 const  arreglo1 = [0,1,2,3,4,5] 
 let arregloPrin;
 let PosicionABorrar:number = 0;
+let indice1 = PosicionABorrar;
 let Tamaño = arreglo1.length;
 let Remplazar; 
-
+let indice2;
 if(PosicionABorrar >= Tamaño || PosicionABorrar <  0){
     
     console.log(arreglo1
@@ -54,10 +55,21 @@ if(PosicionABorrar >= Tamaño || PosicionABorrar <  0){
 
 }else{
 
-     for(let indice2 = 0; indice2 < Tamaño; indice2++ ){
+     for(indice2 = PosicionABorrar + 1; indice2 < Tamaño; indice2++ ){
 
-        arregloPrin[indice2] = arreglo1[indice2]
+      let ultimaPosicion = arreglo1[indice2];
+
+        if(ultimaPosicion){
+
+         Remplazar = arreglo1[indice2];
+         arreglo1[indice1] = Remplazar;
+         indice1++;
+
+
+        }
      }
+
+     arregloPrin  = arreglo1.splice(0,indice1);
 
      console.log(arregloPrin);
             
@@ -65,8 +77,8 @@ if(PosicionABorrar >= Tamaño || PosicionABorrar <  0){
 
 
 
-console.log(arregloPrin);
-*/
+
+
 
 
 
