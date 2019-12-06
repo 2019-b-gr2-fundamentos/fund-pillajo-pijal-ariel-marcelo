@@ -32,31 +32,26 @@ for (var indice = Borrare; indice <= longitud; indice++) {
     }
 }
 // Borrar
-/*
-const  arreglo1 = [0,1,2,3,4,5]
-let arregloPrin;
-let PosicionABorrar:number = 0;
-let Tamaño = arreglo1.length;
-let Remplazar;
-
-if(PosicionABorrar >= Tamaño || PosicionABorrar <  0){
-    
-    console.log(arreglo1
-        + "\n " + " Recuerde que las posiciones se cuenten desde el 0" );
-
-}else{
-
-     for(let indice2 = 0; indice2 < Tamaño; indice2++ ){
-
-        arregloPrin[indice2] = arreglo1[indice2]
-     }
-
-     console.log(arregloPrin);
-            
+var arreglo1 = [0, 1, 2, 3, 4, 5];
+var arregloPrin;
+var PosicionABorrar = 0;
+var indice1 = PosicionABorrar;
+var Tamaño = arreglo1.length;
+var Remplazar;
+var indice2;
+if (PosicionABorrar >= Tamaño || PosicionABorrar < 0) {
+    console.log("[ " + arreglo1 + " ]"
+        + "\n " + " Recuerde que las posiciones se cuenten desde el 0");
 }
-
-
-
-console.log(arregloPrin);
-*/
-
+else {
+    for (indice2 = PosicionABorrar + 1; indice2 < Tamaño; indice2++) {
+        var ultimaPosicion = arreglo1[indice2];
+        if (ultimaPosicion) {
+            Remplazar = arreglo1[indice2];
+            arreglo1[indice1] = Remplazar;
+            indice1++;
+        }
+    }
+    arregloPrin = arreglo1.splice(0, indice1);
+    console.log(arregloPrin);
+}
