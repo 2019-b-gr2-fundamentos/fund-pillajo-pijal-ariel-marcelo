@@ -20,7 +20,7 @@ namespace EscojeUnPais{
 
     class ejemplos_switch{
 
-        public static void main(string[] args){
+        public static void Main(string[] args){
         
         int Categoria,Plato;
         Console.WriteLine("Escribe el numero que representa la categoria que prefieras\n" +

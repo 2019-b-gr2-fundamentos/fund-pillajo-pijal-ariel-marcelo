@@ -16,7 +16,7 @@ namespace EscojeUnPais{
 
     class ejemplos_if_else_02{
 
-        public static void main(string[] args){
+        public static void Main(string[] args){
 int Respuesta, Resultado = 0, importanciaPregunta;
             String RespuestaA = "Eres una persona desinteresada y realmente le prestas atencion a los demas";
             String RespuestaB = "Eres mas egoista que los demas tiendes a poner a los demas en segundo lugar";
