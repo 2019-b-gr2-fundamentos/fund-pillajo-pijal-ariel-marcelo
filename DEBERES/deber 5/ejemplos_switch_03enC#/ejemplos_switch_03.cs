@@ -15,7 +15,7 @@ namespace EscojeUnPais{
 
     class ejemplos_switch{
 
-        public static void main(string[] args){
+        public static void Main(string[] args){
 
         int Tiempo,Materias,Sueño;
         int UnDia = 24;

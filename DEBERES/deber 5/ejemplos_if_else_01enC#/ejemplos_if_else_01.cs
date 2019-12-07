@@ -23,7 +23,7 @@ namespace EscojeUnPais{
 
     class ejemplos_if_else_01{
 
-        public static void main(string[] args){
+        public static void Main(string[] args){
         
           float Sueldo;
           String Eleccion;            

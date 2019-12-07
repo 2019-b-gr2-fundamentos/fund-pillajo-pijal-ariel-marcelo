@@ -8,7 +8,7 @@ namespace EscojeUnPais{
 
     class ejemplos_switch{
 
-        public static void main(string[] args){
+        public static void Main(string[] args){
 
              String Exam1,Exam2,Asistencia;
              float DiasLaborables = 80,PorcentajeAsis,PromedioExam,PorcentajeExam,PorcentajeAsis;

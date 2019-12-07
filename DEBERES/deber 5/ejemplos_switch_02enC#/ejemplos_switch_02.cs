@@ -18,7 +18,7 @@ namespace EscojeUnPais{
 
     class ejemplos_switch{
 
-        public static void main(string[] args){
+        public static void Main(string[] args){
         
           String Inicio, LLamada; 
           Console.WriteLine("Presiona el numero 1 para iniciar");
