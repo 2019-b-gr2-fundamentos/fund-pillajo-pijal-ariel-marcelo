@@ -28,8 +28,8 @@ namespace Exam1
                 int OperarDeNuevo = 0;
                 do
                 {
-                    Console.WriteLine("Elija el numero que representa a la operacion que desea realizar \n 1 Suma \n 2 Resta \n 3 Multiplicacion \n 4 Division \n 5 E = mc2 \n  6 Sin(x) \n " );
-                    Console.WriteLine("7 Regla de tres  \n 8 Promedio  \n 9 Potencia  \n 10 Raiz");
+                    Console.WriteLine("Elija el numero que representa a la operacion que desea realizar \n 1 Suma \n 2 Resta \n 3 Multiplicacion \n 4 Division \n 5 E = mc2 \n 6 Sin(x)" );
+                    Console.WriteLine(" 7 Regla de tres \n 8 Promedio \n 9 Potencia \n 10 Raiz");
                     String operacion = Console.ReadLine();
 
                     switch(operacion)
