@@ -12,9 +12,10 @@ function dividir(numUno, numDOS) {
 }
 //  MAIN SE REFRIERE A UNA FUNCON PRINCIPAL
 function main() {
-    main();
+    calculadora();
 }
-function calculadora() {
+function calculadora() 
+{
     var operacion = prompt("Selecciona una operacion: ´Suma - 1´, ¨Resta-2¨, ¨Multilicacion-3¨ , ´Division-4´ y ¨Terminamos-5¨");
     var esSuma = operacion == "suma" ||
         operacion == "1" ||
@@ -47,8 +48,9 @@ function calculadora() {
         }
         if (esDivision) {
             resultado = dividir(numUno, numDos);
-        }
-        else {
+        }else 
+
+        {
             if (seTermino) {
                 console.log("se Termino :)");
             }

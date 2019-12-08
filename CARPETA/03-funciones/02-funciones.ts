@@ -23,7 +23,7 @@ function dividir(numUno:number, numDOS:number): number{
 //  MAIN SE REFRIERE A UNA FUNCON PRINCIPAL
 function main(){
     
-     main();
+     calculadora();
 
 }
 
