@@ -41,6 +41,7 @@ namespace Exam2
               ArrayList nombre = new ArrayList();
               ArrayList mes = new ArrayList();
               ArrayList dia = new ArrayList();
+              ArrayNo
               do{
 
                    switch(Inicio){

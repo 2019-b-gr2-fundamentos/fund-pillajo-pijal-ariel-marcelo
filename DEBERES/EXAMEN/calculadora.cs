@@ -22,12 +22,12 @@ namespace Exam1
         static void Main(String[] args)
         {
 
-            Boolean Aceptacion = true;
+            int Aceptacion = 1;
             String Respuesta2,Respuesta3;
             Decimal Valor1 = 0, Valor2 = 0,Resultado = 0;
             Double Base = 0,Radical = 1,Exponente, ini = 1;
-            
-            while (Aceptacion == true)
+               
+            while (Aceptacion == 1)
             {
 
                 int OperarDeNuevo = 0;
@@ -61,21 +61,12 @@ namespace Exam1
 
                         Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                         Respuesta2 = Console.ReadLine();
-                        if(Respuesta2 == "Si"  ||Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
+                        if(Respuesta2 == "Si"  || Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
                             OperarDeNuevo++;
 
                         }else{
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" ||Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 == "Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-
-                            
+                            Aceptacion = aceptar();   
                         }
 
                         break;
@@ -102,21 +93,13 @@ namespace Exam1
 
                         Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                         Respuesta2 = Console.ReadLine();
-                        if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
+                        if(Respuesta2 == "Si"  ||Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
                             OperarDeNuevo++;
 
                         }else{
 
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
@@ -143,21 +126,13 @@ namespace Exam1
 
                         Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                         Respuesta2 = Console.ReadLine();
-                        if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
+                        if(Respuesta2 == "Si"  ||Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
                             OperarDeNuevo++;
 
                         }else{
 
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
@@ -184,21 +159,11 @@ namespace Exam1
 
                         Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                         Respuesta2 = Console.ReadLine();
-                        if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
+                        if(Respuesta2 == "Si"  ||Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
                             OperarDeNuevo++;
-
                         }else{
-
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
@@ -241,18 +206,11 @@ namespace Exam1
                             Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                             Respuesta2 = Console.ReadLine();
                             if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
-                            OperarDeNuevo++;               
+                                OperarDeNuevo++;               
                             }else{
-                            OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-                            }else{
-                                Aceptacion = false;                               
+                                OperarDeNuevo = 0;
+                                Aceptacion = aceptar();
                             }
-                        
-                        }
 
                         break; 
 
@@ -284,15 +242,7 @@ namespace Exam1
                         }else{
 
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
@@ -322,10 +272,10 @@ namespace Exam1
                             Console.WriteLine("¿Desea hacer otra operación?");
                             Respuesta3 = Console.ReadLine();
                             if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
+                                Aceptacion = 1; 
 
                             }else{
-                                Aceptacion = false;                               
+                                Aceptacion = 0;                               
                             }
                         
                         }
@@ -361,21 +311,12 @@ namespace Exam1
                         }else{
 
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
 
                         case "9":
-
 
                         if(OperarDeNuevo == 0)
                         {
@@ -403,15 +344,7 @@ namespace Exam1
                         }else{
 
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" ||Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
@@ -443,39 +376,36 @@ namespace Exam1
                         Respuesta2 = Console.ReadLine();
                         if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
                             OperarDeNuevo++;
-
                         }else{
-
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" ||Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();   
                         }
-
                         break;
 
-                        default :
+                        default:
                         Console.WriteLine("La opcion seleccionada no existe");
 
                         break;
-
-
-
                     }
 
-                }while(OperarDeNuevo != 0);
-                
+                }while(OperarDeNuevo != 0);      
             }
 
             Console.WriteLine("Goodbye");
-            
         }
 
+        public static int aceptar(){
+            int Aceptacion;
+            Console.WriteLine("¿Desea hacer otra operación?");
+            string Respuesta3 = Console.ReadLine();
+            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" ||Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
+                Aceptacion = 1; 
+
+            }else{
+                Aceptacion = 0;                               
+            }
+
+            return Aceptacion;
+        }
     }
 }
