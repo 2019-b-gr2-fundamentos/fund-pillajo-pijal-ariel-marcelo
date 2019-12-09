@@ -36,12 +36,12 @@ namespace Exam2
           {
 
               string Inicio = Bienvenida();
-              int exit = 11, indice = 0;
+              int exit = 11, indice = 0,SuMes,SuDia, SegunElMes;
 
               ArrayList nombre = new ArrayList();
               ArrayList mes = new ArrayList();
               ArrayList dia = new ArrayList();
-              ArrayNo
+              
               do{
 
                    switch(Inicio){
@@ -52,18 +52,58 @@ namespace Exam2
                         string SuNombre = Console.ReadLine();
                         nombre.Add(SuNombre);
                         Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " );
-                        int SuMes = Convert.ToInt32(Console.ReadLine());
+                        SuMes = Convert.ToInt32(Console.ReadLine());
+                        while(SuMes <= 0 || SuMes > 12){
+                             Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " );
+                             SuMes = Convert.ToInt32(Console.ReadLine());
+                        }
                         mes.Add(SuMes);
                         Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " );
-                        int SuDia = Convert.ToInt32(Console.ReadLine());
+                        SuDia = Convert.ToInt32(Console.ReadLine());
+                        SegunElMes = 1;
+
+                        while (SegunElMes != 0)
+                        {
+                              if(SuMes == 4 || SuMes == 6 || SuMes == 9 || SuMes == 11)
+                              {
+                                 while (SuDia < 0 || SuDia > 30)
+                                 {
+                                      SegunElMes = 0;
+                                      Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " );
+                                      SuDia = Convert.ToInt32(Console.ReadLine());
+                                 }
+                              
+                              }else if(SuMes == 1 || SuMes == 3 || SuMes == 5 || SuMes == 7 || SuMes == 8 || SuMes == 10 || SuMes == 12){
+                                 while (SuDia < 0 || SuDia > 31)
+                                 {
+                                      SegunElMes = 0;
+                                      Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " );
+                                      SuDia = Convert.ToInt32(Console.ReadLine());
+                                 }
+
+                              }else if(SuMes == 2){
+                                 while (SuDia < 0 || SuDia > 28)
+                                 {
+                                      SegunElMes = 0;
+                                      Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " );
+                                      SuDia = Convert.ToInt32(Console.ReadLine());
+                                 }
+                              }
+                              
+                        }
                         dia.Add(SuDia);
-                        Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " + mes[indice] );
+                        Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " + dia[indice] );
                         indice++;
                         Inicio = Bienvenida();                      
 
                         break;
 
                         case "2":
+
+                        for(int i = 0; i <= indice; i++)
+                        {
+                             Console.WriteLine(" Casilla: " + i + " Nombre: " + nombre[i] + " Mes: " + mes[i] + " Dia: " + dia[i]);
+                        }
 
                         int Indice2 = Posicion();
 
@@ -80,12 +120,17 @@ namespace Exam2
                         Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " + mes[Indice2] + " Dia: " );
                         SuDia = Convert.ToInt32(Console.ReadLine());
                         dia[Indice2] = SuDia;
-                        Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " + mes[Indice2] + " Dia: " + mes[Indice2] );
+                        Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " + mes[Indice2] + " Dia: " + dia[Indice2] );
                         Inicio = Bienvenida();
 
                         break;
 
                         case "3":
+
+                        for(int i = 0; i <= indice; i++)
+                        {
+                             Console.WriteLine(" Casilla: " + i + " Nombre: " + nombre[i] + " Mes: " + mes[i] + " Dia: " + dia[i]);
+                        }
 
                         int Indice3 = Posicion();
 
@@ -98,9 +143,9 @@ namespace Exam2
 
                         Console.WriteLine("Casilla Eliminada \n  Casilla: " + Indice3 + " Nombre: " + nombre[Indice3] + " Mes: " + mes[Indice3] + " Dia: " + mes[Indice3] );
 
-                        nombre.RemoveAt(Indice3);
-                        mes.RemoveAt(Indice3);
-                        dia.RemoveAt(Indice3);
+                        nombre[Indice3] = "null";
+                        mes[Indice3] = 0;
+                        dia[Indice3] = 0;
                         Inicio = Bienvenida();
 
                         break;
@@ -124,7 +169,7 @@ namespace Exam2
 
           public static string Bienvenida(){
 
-               Console.WriteLine(" Bienvenido \n ¿Que desea hacer en el arreglo? \n 1 Crear \n 2 Actualizar \n 3 Eliminar \n 4 Salir");
+               Console.WriteLine(" \n Bienvenido \n ¿Que desea hacer en el arreglo? \n 1 Crear \n 2 Actualizar \n 3 Eliminar \n 4 Salir");
                string Respuesta = Console.ReadLine();
                return Respuesta;
           }
