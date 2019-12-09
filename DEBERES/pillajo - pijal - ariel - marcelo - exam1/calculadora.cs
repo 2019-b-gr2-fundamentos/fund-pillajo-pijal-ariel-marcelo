@@ -7,6 +7,11 @@
 
 
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Exam1
 {
@@ -17,18 +22,19 @@ namespace Exam1
         static void Main(String[] args)
         {
 
-            Boolean Aceptacion = true;
+            int Aceptacion = 1;
             String Respuesta2,Respuesta3;
-            Decimal Valor1, Valor2,Resultado = 0;
-            
-            while (Aceptacion == true)
+            Decimal Valor1 = 0, Valor2 = 0,Resultado = 0;
+            Double Base = 0,Radical = 1,Exponente, ini = 1;
+               
+            while (Aceptacion == 1)
             {
 
                 int OperarDeNuevo = 0;
                 do
                 {
-                    Console.WriteLine("Elija el numero que representa a la operacion que desea realizar");
-                    Console.WriteLine();
+                    Console.WriteLine("Elija el numero que representa a la operacion que desea realizar \n 1 Suma \n 2 Resta \n 3 Multiplicacion \n 4 Division \n 5 E = mc2 \n 6 Sin(x)" );
+                    Console.WriteLine(" 7 Regla de tres \n 8 Promedio \n 9 Potencia \n 10 Raiz");
                     String operacion = Console.ReadLine();
 
                     switch(operacion)
@@ -55,21 +61,12 @@ namespace Exam1
 
                         Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                         Respuesta2 = Console.ReadLine();
-                        if(Respuesta2 == "Si"  ||Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
+                        if(Respuesta2 == "Si"  || Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
                             OperarDeNuevo++;
 
                         }else{
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" ||Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 == "Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-
-                            
+                            Aceptacion = aceptar();   
                         }
 
                         break;
@@ -96,21 +93,13 @@ namespace Exam1
 
                         Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                         Respuesta2 = Console.ReadLine();
-                        if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
+                        if(Respuesta2 == "Si"  ||Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
                             OperarDeNuevo++;
 
                         }else{
 
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
@@ -137,21 +126,13 @@ namespace Exam1
 
                         Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                         Respuesta2 = Console.ReadLine();
-                        if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
+                        if(Respuesta2 == "Si"  ||Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
                             OperarDeNuevo++;
 
                         }else{
 
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
@@ -178,21 +159,11 @@ namespace Exam1
 
                         Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                         Respuesta2 = Console.ReadLine();
-                        if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
+                        if(Respuesta2 == "Si"  ||Respuesta2 == "sÍ" || Respuesta2 == "si" || Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ" ||Respuesta2 == "Yes"){
                             OperarDeNuevo++;
-
                         }else{
-
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
@@ -235,34 +206,31 @@ namespace Exam1
                             Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
                             Respuesta2 = Console.ReadLine();
                             if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
-                            OperarDeNuevo++;               
+                                OperarDeNuevo++;               
                             }else{
-                            OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-                            }else{
-                                Aceptacion = false;                               
+                                OperarDeNuevo = 0;
+                                Aceptacion = aceptar();
                             }
-                        
-                        }
 
                         break; 
 
                          case "6":
 
+                        Double angulo;
+                        Double y = 0;
+
                         if(OperarDeNuevo == 0)
                         {
+                           
                             Console.WriteLine("Dame de tu angulo");
-                            Valor1 = Convert.ToDecimal(Console.ReadLine());
-                            Resultado = Math.Sin(Valor1);
-                            Console.WriteLine("Tu resultado es: " +  Resultado);
+                            angulo = Convert.ToDouble(Console.ReadLine());
+                            y = Math.Sin(angulo);
+                            Console.WriteLine("Tu resultado es: " +  y);
 
                         }if(OperarDeNuevo != 0){
-                            Valor1 = Resultado;
-                            Resultado = Math.Sin(Valor1);
-                            Console.WriteLine("Tu resultado es: " +  Resultado);
+                            angulo = y;
+                            y = Math.Sin(angulo);
+                            Console.WriteLine("Tu resultado es: " +  y);
 
                         }
 
@@ -274,15 +242,7 @@ namespace Exam1
                         }else{
 
                             OperarDeNuevo = 0;
-                            Console.WriteLine("¿Desea hacer otra operación?");
-                            Respuesta3 = Console.ReadLine();
-                            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
-
-                            }else{
-                                Aceptacion = false;                               
-                            }
-                        
+                            Aceptacion = aceptar();
                         }
 
                         break;
@@ -291,19 +251,13 @@ namespace Exam1
 
                         if(OperarDeNuevo == 0)
                         {
-                            Console.WriteLine("Dame el Valor 1");
+                            Console.WriteLine("Dame el Valor TotaL");
                             Valor1 = Convert.ToDecimal(Console.ReadLine());
-                            Console.WriteLine("Dame el Valor 2");
+                            Console.WriteLine("Dame el Valor Obtenido");
                             Valor2 = Convert.ToDecimal(Console.ReadLine());
-                            Resultado = Valor1 * Valor2; 
-                            Console.WriteLine("Tu resultado es: " +  Resultado);
-
-                        }if(OperarDeNuevo != 0){
-                            Valor1 = Resultado;
-                            Console.WriteLine("Dame el Valor 2");
-                            Valor2 = Convert.ToDecimal(Console.ReadLine());
-                            Resultado = Valor1 * Valor2;
-                            Console.WriteLine("Tu resultado es: " +  Resultado);
+                            Decimal Todo = 100;
+                            Resultado = ((Valor2 * Todo)/Valor1); 
+                            Console.WriteLine("EL porcentaje en relacion al valor Total es de: " +  Resultado + " %");
 
                         }
 
@@ -318,25 +272,140 @@ namespace Exam1
                             Console.WriteLine("¿Desea hacer otra operación?");
                             Respuesta3 = Console.ReadLine();
                             if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" |Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
-                                Aceptacion = true; 
+                                Aceptacion = 1; 
 
                             }else{
-                                Aceptacion = false;                               
+                                Aceptacion = 0;                               
                             }
                         
                         }
 
                         break;
 
+
+                        case "8":
+ 
+                        if(OperarDeNuevo == 0)
+                        {
+                            Console.WriteLine("¿Cuantos Valores vas a ingresar?");
+                            int DatosIngresados = Convert.ToInt32(Console.ReadLine());
+                            int indice;
+                            for( indice = 1; indice <= DatosIngresados; indice++ ){
+                                Console.WriteLine(" Ingrese el Valor #" + indice);
+                                Valor1 = Convert.ToDecimal(Console.ReadLine());
+                                Resultado = Valor1 + Valor2;
+                                Valor2 = Resultado;
+
+                            }
+                            
+                            Decimal ValoresIngresados = Convert.ToDecimal(indice);
+                            Resultado = (Resultado)/(ValoresIngresados-1);
+                            Console.WriteLine("EL Promedio total es de: " + Resultado);
+                        }
+
+                        Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
+                        Respuesta2 = Console.ReadLine();
+                        if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
+                            OperarDeNuevo++;
+
+                        }else{
+
+                            OperarDeNuevo = 0;
+                            Aceptacion = aceptar();
+                        }
+
+                        break;
+
+                        case "9":
+
+                        if(OperarDeNuevo == 0)
+                        {
+                            Console.WriteLine("Dame el la Base de la Potencia");
+                            Base = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Dame EL Valor del Exponente");
+                            Exponente = Convert.ToDouble(Console.ReadLine());
+                            Resultado = Convert.ToDecimal(Math.Pow(Base,Exponente));
+                            Console.WriteLine("Tu resultado es: " +  Resultado);
+
+                        }if(OperarDeNuevo != 0){
+                            Base = Convert.ToDouble(Resultado);
+                            Console.WriteLine("Dame el Valor del Exponente");
+                            Exponente = Convert.ToDouble(Console.ReadLine());
+                            Resultado = Convert.ToDecimal(Math.Pow(Base,Exponente));
+                            Console.WriteLine("Tu resultado es: " +  Resultado);
+
+                        }
+
+                        Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
+                        Respuesta2 = Console.ReadLine();
+                        if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
+                            OperarDeNuevo++;
+
+                        }else{
+
+                            OperarDeNuevo = 0;
+                            Aceptacion = aceptar();
+                        }
+
+                        break;
+
+                        case "10":
+
+
+                        if(OperarDeNuevo == 0)
+                        {
+                            Console.WriteLine("Dame el Valor de la Base");
+                            Base = Convert.ToDouble(Console.ReadLine());
+                            Console.WriteLine("Dame EL Valor del Radical");
+                            Exponente = Convert.ToDouble(Console.ReadLine());     
+                            Radical = ini /Exponente;
+                            Resultado = Convert.ToDecimal(Math.Pow(Base,Radical));
+                            Console.WriteLine("Tu resultado es: " +  Resultado);
+
+                        }if(OperarDeNuevo != 0){
+                            Base = Convert.ToDouble(Resultado);
+                            Console.WriteLine("Dame el Valor del Radical");
+                            Exponente = Convert.ToDouble(Console.ReadLine());
+                            Radical = ini/Exponente;
+                            Resultado = Convert.ToDecimal(Math.Pow(Base,Radical));
+                            Console.WriteLine("Tu resultado es: " +  Resultado);
+
+                        }
+
+                        Console.WriteLine("¿Deseas seguir operando con tu Resultado Anterior?");
+                        Respuesta2 = Console.ReadLine();
+                        if(Respuesta2 == "Si" ||Respuesta2 == "sÍ" ||Respuesta2 == "si" ||Respuesta2 == "SI" ||Respuesta2 == "sí" ||Respuesta2 =="sI" ||Respuesta2 == "SÍ"||Respuesta2 == "Yes"){
+                            OperarDeNuevo++;
+                        }else{
+                            OperarDeNuevo = 0;
+                            Aceptacion = aceptar();   
+                        }
+                        break;
+
+                        default:
+                        Console.WriteLine("La opcion seleccionada no existe");
+
+                        break;
                     }
 
-                }while(OperarDeNuevo != 0);
-                
+                }while(OperarDeNuevo != 0);      
             }
 
             Console.WriteLine("Goodbye");
-            
         }
 
+        public static int aceptar(){
+            int Aceptacion;
+            Console.WriteLine("¿Desea hacer otra operación?");
+            string Respuesta3 = Console.ReadLine();
+            if(Respuesta3 == "Si"  ||Respuesta3 == "sÍ" ||Respuesta3 == "si" ||Respuesta3 == "SI" ||Respuesta3 == "sí" ||Respuesta3 =="sI" ||Respuesta3 =="SÍ"||Respuesta3 =="Yes"){
+                Aceptacion = 1; 
+
+            }else{
+                Aceptacion = 0;                               
+            }
+
+            return Aceptacion;
+        }
     }
 }
