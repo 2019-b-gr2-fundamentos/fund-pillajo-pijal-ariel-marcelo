@@ -1,6 +1,5 @@
 function log( // en la mayoria de lenguajes log necesitaria definirse primero
-    cualquierCosa// parametro como un f(x)
-    ){
+    cualquierCosa){ // parametro 
     console.log(cualquierCosa); 
 }
 

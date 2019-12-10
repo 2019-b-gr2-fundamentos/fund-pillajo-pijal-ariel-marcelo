@@ -30,7 +30,7 @@ function main(){
 
 main();
 
-/* Forma de Tipar arreglos
+// Forma de Tipar arreglos
 
 const arregloNumeros: number[] = [1, 2, 3];
 const arregloString: string[] =  ["a", "b", "c"];

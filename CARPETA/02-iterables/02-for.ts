@@ -6,9 +6,9 @@
 
 
 
-for(let numeroExDeMiCrush = 0; 
-    numeroExDeMiCrush < 8; 
-    numeroExDeMiCrush++){
+for(let numeroExDeMiCrush = 0;  // Declarar una variable
+    numeroExDeMiCrush < 8;  // Condicion( Expresion )
+    numeroExDeMiCrush++){ // Incrementar, Disminuir
 
     console.log("ES CAN DA LO!" + numeroExDeMiCrush);
 }
@@ -79,7 +79,7 @@ console.log(arregloNumeros[indiceElementoCinco]);
 // Ej: [0,0,0,0,0] No es valido
 // Ej [0, 0, 0, 1, 0]
 
-
+//Aleatoriamente se escogen valores en los intervalos especificados segun el numero
 Math.floor(Math.random()*2)// [0,2[
 Math.floor(Math.random()*10)// [0,11[
     
