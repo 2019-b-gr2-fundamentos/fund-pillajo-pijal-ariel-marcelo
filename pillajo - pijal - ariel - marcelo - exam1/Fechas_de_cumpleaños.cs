@@ -36,7 +36,9 @@ namespace Exam2
           {
 
               string Inicio = Bienvenida();
-              int exit = 11, indice = 0,SuMes,SuDia, SegunElMes;
+              int exit = 11, indice = 0,SuMes = 0;
+              int SuDia = 0;
+              int  Segun_ElMes_Elegido = 1;
 
               ArrayList nombre = new ArrayList();
               ArrayList mes = new ArrayList();
@@ -58,39 +60,63 @@ namespace Exam2
                              SuMes = Convert.ToInt32(Console.ReadLine());
                         }
                         mes.Add(SuMes);
+
                         Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " );
                         SuDia = Convert.ToInt32(Console.ReadLine());
-                        SegunElMes = 1;
 
-                        while (SegunElMes != 0)
-                        {
+                        Segun_ElMes_Elegido = 1;
+
+                        while (Segun_ElMes_Elegido != 0)
+                        {   
                               if(SuMes == 4 || SuMes == 6 || SuMes == 9 || SuMes == 11)
-                              {
-                                 while (SuDia < 0 || SuDia > 30)
+                              {  
+
+                                   
+                                 while (SuDia <= 0 || SuDia > 30)
                                  {
-                                      SegunElMes = 0;
+                                      Segun_ElMes_Elegido = 0;
                                       Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " );
                                       SuDia = Convert.ToInt32(Console.ReadLine());
                                  }
                               
-                              }else if(SuMes == 1 || SuMes == 3 || SuMes == 5 || SuMes == 7 || SuMes == 8 || SuMes == 10 || SuMes == 12){
-                                 while (SuDia < 0 || SuDia > 31)
-                                 {
-                                      SegunElMes = 0;
-                                      Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " );
-                                      SuDia = Convert.ToInt32(Console.ReadLine());
-                                 }
+                              }else{
+                                   Segun_ElMes_Elegido = 0;
 
-                              }else if(SuMes == 2){
-                                 while (SuDia < 0 || SuDia > 28)
-                                 {
-                                      SegunElMes = 0;
+                              }
+
+                              if(SuMes == 1 || SuMes == 3 || SuMes == 5 || SuMes == 7 || SuMes == 8 || SuMes == 10 || SuMes == 12)
+                              {
+                                   
+                                  while (SuDia <= 0 || SuDia > 31){
+
+                                     
+                                      Segun_ElMes_Elegido = 0;
                                       Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " );
                                       SuDia = Convert.ToInt32(Console.ReadLine());
-                                 }
+                                      
+                                    }
+
+                                 Console.WriteLine(SuDia);
+
+                              }else{
+                                   Segun_ElMes_Elegido = 0;
                               }
                               
-                        }
+                              if(SuMes == 2){
+                                 while (SuDia <= 0 || SuDia > 28)
+                                 {
+                                      Segun_ElMes_Elegido = 0;
+                                      Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " );
+                                      SuDia = Convert.ToInt32(Console.ReadLine());
+                                 }
+                              }else{
+
+                                   Segun_ElMes_Elegido = 0;
+
+                              }
+                              
+                         }
+
                         dia.Add(SuDia);
                         Console.Write(" Casilla: " + indice + " Nombre: " + nombre[indice] + " Mes: " + mes[indice] + " Dia: " + dia[indice] );
                         indice++;
@@ -100,7 +126,7 @@ namespace Exam2
 
                         case "2":
 
-                        for(int i = 0; i <= indice; i++)
+                        for(int i = 0; i < indice; i++)
                         {
                              Console.WriteLine(" Casilla: " + i + " Nombre: " + nombre[i] + " Mes: " + mes[i] + " Dia: " + dia[i]);
                         }
@@ -114,11 +140,72 @@ namespace Exam2
 
                         }
                         Console.WriteLine(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " + mes[Indice2] + " Dia: " + mes[Indice2] );
+                        Console.Write(" Casilla: " + Indice2 + " Nombre: ");
+                        SuNombre = Console.ReadLine();
+                        nombre[Indice2] = SuNombre;
+
                         Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " );
                         SuMes = Convert.ToInt32(Console.ReadLine());
+
+                        while(SuMes <= 0 || SuMes > 12){
+                             Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " );
+                             SuMes = Convert.ToInt32(Console.ReadLine());
+                        }
                         mes[Indice2] = SuMes;
                         Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " + mes[Indice2] + " Dia: " );
                         SuDia = Convert.ToInt32(Console.ReadLine());
+
+                        Segun_ElMes_Elegido = 1;
+
+                        while (Segun_ElMes_Elegido != 0)
+                        {    
+                              if(SuMes == 4 || SuMes == 6 || SuMes == 9 || SuMes == 11)
+                              {  
+
+                                   
+                                 while (SuDia <= 0 || SuDia > 30)
+                                 {
+                                      Segun_ElMes_Elegido = 0;
+                                      Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " + mes[Indice2] + " Dia: " );
+                                      SuDia = Convert.ToInt32(Console.ReadLine());
+                                 }
+                              
+                              }else{
+                                   Segun_ElMes_Elegido = 0;
+
+                              }
+
+                              if(SuMes == 1 || SuMes == 3 || SuMes == 5 || SuMes == 7 || SuMes == 8 || SuMes == 10 || SuMes == 12)
+                              {
+                                   
+                                  while (SuDia <= 0 || SuDia > 31){
+                              
+                                      Segun_ElMes_Elegido = 0;
+                                      Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " + mes[Indice2] + " Dia: " );
+                                      SuDia = Convert.ToInt32(Console.ReadLine());
+                                      Console.WriteLine(SuMes);
+                                    }
+
+                                 Console.WriteLine(SuDia);
+
+                              }else{
+                                   Segun_ElMes_Elegido = 0;
+                              }
+                              
+                              if(SuMes == 2){
+                                 while (SuDia <= 0 || SuDia > 28)
+                                 {
+                                      Segun_ElMes_Elegido = 0;
+                                      Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " + mes[Indice2] + " Dia: " );
+                                      SuDia = Convert.ToInt32(Console.ReadLine());
+                                 }
+                              }else{
+
+                                   Segun_ElMes_Elegido = 0;
+
+                              }
+                              
+                         }
                         dia[Indice2] = SuDia;
                         Console.Write(" Casilla: " + Indice2 + " Nombre: " + nombre[Indice2] + " Mes: " + mes[Indice2] + " Dia: " + dia[Indice2] );
                         Inicio = Bienvenida();
@@ -127,7 +214,7 @@ namespace Exam2
 
                         case "3":
 
-                        for(int i = 0; i <= indice; i++)
+                        for(int i = 0; i < indice; i++)
                         {
                              Console.WriteLine(" Casilla: " + i + " Nombre: " + nombre[i] + " Mes: " + mes[i] + " Dia: " + dia[i]);
                         }
