@@ -1,4 +1,4 @@
-/* cuando definimos arreglos
+ cuando definimos arreglos
 codemos formarlos de ditintas dimensiones
 
 const arregloDosDimensiones =

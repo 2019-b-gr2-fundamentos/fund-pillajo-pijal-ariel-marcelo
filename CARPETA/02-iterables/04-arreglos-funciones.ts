@@ -1,22 +1,23 @@
+// Declarar un arreglo
 const arregloNumeros = [1,2,3,4,5,6,7];
-// Aceder 
-// Necesito: Inice
-console.log(arregloNumeros[6]); // 7
+//  Para Aceder 
+// Necesito: Inice que represente la posicion del arreglo en este caso la posicion 6
+console.log(arregloNumeros[6]); // Nos devuelve 7 ya que cuenta desde el 0 
 // Añadir al Final 
-// Necesito Elemento a añadirse 
+// Añadir 11 ---> [1,2,3,4,5,6,7,11]
 arregloNumeros.push(11);
-// borrar al final
+// borrar al final [1,2,3,4,5,6,7]
 arregloNumeros.pop();
 // Añadir en un indice 
 // elemento 
 arregloNumeros.splice(0,  0, 1.2);// remueve de ser necesario y pone un elemento en su lugar
-//               posicion, 0 para no borrar solo mover de su posicion, valor a agregar
+//               (posicion, 0 para no borrar solo mover de su posicion, valor a agregar)
 console.log(arregloNumeros);
-// o Borrar 
-arregloNumeros.splice(2, 1); // posicion, 1 para borrar el elemento
+//  Borrar 
+arregloNumeros.splice(2, 1); // (posicion, 1 para borrar el elemento)
 console.log(arregloNumeros);
-// Buscar el indice de un elemento
-arregloNumeros.indexOf(5); // marca el valor del indice pero si no encuentra el elemento manda -1
+// Buscar el indice de un elemento 5
+arregloNumeros.indexOf(5); // marca el valor del indice, pero si no encuentra el elemento manda -1
 
 arregloNumeros.splice(0,  1, 999); // es = arregloNumeros[0] = 1;
 console.log(arregloNumeros);
