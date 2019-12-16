@@ -122,6 +122,7 @@ function obtenerSegundaDimension(matrizUno: number[][]): number | false{
             }
         }
     }
+    return false;
 }
 
 
