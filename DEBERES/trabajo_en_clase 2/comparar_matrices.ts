@@ -77,7 +77,7 @@ const arregloMatriz = [
     [9],
     1
 ]
-
+//hpñl
 function compararMatriz(
     matrizUno: number[][],
     matrizDos: number[][]
