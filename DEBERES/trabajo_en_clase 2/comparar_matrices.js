@@ -1,27 +1,83 @@
-// Programa que determine si dos matrices son iguales
-// programa que compare dos matrices y determine si estas son iguales 
-var matriz1 = [
-    [1, 2, 3],
-    [4, 5, 6]
+var arregloMatriz = [
+    [1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [9],
+    []
 ];
-var matriz2 = [
-    [1, 2, 3],
-    [4, 5, 6]
-];
-var filas1 = matriz1.length;
-console.log(filas1);
-var filas2 = matriz2.length;
-console.log(filas2);
-var i = 0;
-var a = 0;
-var b = 0;
-do {
-    var a = matriz1[i].length;
-    var b = matriz2[i + 1].length;
-    i++;
-} while (i < );
-console.log("La matriz tiene todos sus elementos iguales");
-function compararMatriz(
-    matriz1: number[][],
-    matriz2: number[][]
-): Boolean
+function compararMatriz(matrizUno, matrizDos) {
+    var matrizUnoPrimeraDimension = obtenerPrimeraDimension(matrizUno);
+    var matrizUnoSegundaDimension = obtenerSegundaDimension(matrizUno);
+    var matrizDosPrimeraDimension = obtenerPrimeraDimension(matrizDos);
+    var matrizDosSegundaDimension = obtenerSegundaDimension(matrizDos);
+    console.log(matrizUnoPrimeraDimension);
+    console.log(matrizUnoSegundaDimension);
+    console.log(matrizDosPrimeraDimension);
+    console.log(matrizDosSegundaDimension);
+    return true;
+}
+function obtenerPrimeraDimension(matrizUno) {
+    //Validaciones
+    var esValido = verificarTodosLosElementosDeUnArregloSonArreglo(matrizUno);
+    if (esValido) {
+        var primeraDimemnsionArreglo = matrizUno.length;
+        return primeraDimemnsionArreglo;
+    }
+    else {
+        return false;
+    }
+}
+function obtenerSegundaDimension(matrizUno) {
+    var esValido = verificarTodosLosElementosDeUnArregloSonArreglo(matrizUno);
+    if (esValido) {
+        var longitudActualMaxima = 0; // Auxiliar
+        var longitudActualMinima = -1; // Auxliar
+        for (var i = 0; i < matrizUno.length; i++) {
+            var elementoActual = matrizUno[i]; // arreglo
+            var longitudActual = elementoActual.length; // SEGUNDA DIMENSION
+            if (longitudActualMaxima < longitudActual) {
+                longitudActualMaxima = longitudActual;
+            }
+            if (longitudActualMinima == -1) {
+                longitudActualMinima = longitudActual;
+            }
+            else {
+                if (longitudActual < longitudActualMinima) {
+                    longitudActualMinima = longitudActual;
+                }
+            }
+        }
+        if (longitudActualMaxima != longitudActualMinima) {
+            return false;
+        }
+        else {
+            return matrizUno[0].length;
+        }
+    }
+    else {
+        return false;
+    }
+}
+function verificarTodosLosElementosDeUnArregloSonArreglo(arreglo) {
+    for (var i = 0; i < arreglo.length; i++) {
+        var elementoActual = arreglo[i];
+        var esUnArreglo = typeof elementoActual == "object" &&
+            elementoActual.indexOf; // truty
+        if (!esUnArreglo) {
+            return false;
+        }
+    }
+    return true;
+}
+function main() {
+    var x = [
+        [1, 2],
+        [3]
+    ];
+    var y = [
+        [1, 2],
+        [3, 4]
+    ];
+    compararMatriz(x, y);
+}
+main();
