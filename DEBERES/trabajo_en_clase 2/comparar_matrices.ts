@@ -11,26 +11,84 @@ function compararMatriz(
     matrizUno: number[][],
     matrizDos: number[][]
 ): boolean {
-    const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
-        matrizUno
-        );
-    const matrizUnoSegundaDimension = obtenerSegundaDimension(
-        matrizUno
-        );
-    const matrizDosPrimeraDimension = obtenerPrimeraDimension(
-        matrizDos
-        );
-    const matrizDosSegundaDimension = obtenerSegundaDimension(
-        matrizDos
-        );
-    console.log(matrizUnoPrimeraDimension);
-    console.log(matrizUnoSegundaDimension);
-    console.log(matrizDosPrimeraDimension);
-    console.log(matrizDosSegundaDimension);
+    const esValido = tienenMatricesIgualesDimensiones(
+    matrizUno,
+    matrizDos
+    );
 
-    return true;
+    if(esValido){
+        // Comparar los valores
+        return tienenLosMismosValores(
+            matrizUno,
+            matrizDos
+        ); // boolean
+
+    } else {
+        return false;
+    }
+}
+
+function tienenLosMismosValores(
+    matrizUno: number[][],
+    matrizDos: number[][],
+){
+    const primeraDimemncion = matrizUno.length;
+    const segundaDimencion  = matrizUno[0].length;
+    let banderaSonIguales = true;
+    for(let i = 0; i < primeraDimemncion; i++){
+        for(let j = 0; j > segundaDimencion; ++j){
+            const ValorActualM1 = matrizUno[i][j];
+            const ValorActualM2 = matrizDos[i][j];
+            if(ValorActualM1 != ValorActualM2){
+                banderaSonIguales = false;
+            }
+        }
+    }
+    return banderaSonIguales;
 
 }
+
+function tienenMatricesIgualesDimensiones(
+    matrizUno: number[][],
+    matrizDos: number[][]
+): boolean {
+
+
+        const matrizUnoPrimeraDimension = obtenerPrimeraDimension(
+            matrizUno
+            );
+        const matrizUnoSegundaDimension = obtenerSegundaDimension(
+            matrizUno
+            );
+        const matrizDosPrimeraDimension = obtenerPrimeraDimension(
+            matrizDos
+            );
+        const matrizDosSegundaDimension = obtenerSegundaDimension(
+            matrizDos
+            );
+        console.log(matrizUnoPrimeraDimension);
+        console.log(matrizUnoSegundaDimension);
+        console.log(matrizDosPrimeraDimension);
+        console.log(matrizDosSegundaDimension);
+        const noHayFalsos = matrizUnoPrimeraDimension != false &&
+                            matrizUnoSegundaDimension != false &&
+                            matrizDosPrimeraDimension != false &&
+                            matrizDosSegundaDimension != false
+        const TienenIgualesDimensiones = matrizUnoPrimeraDimension == matrizDosPrimeraDimension &&
+                                         matrizUnoSegundaDimension == matrizDosSegundaDimension;
+    
+        if(noHayFalsos ){
+               if(TienenIgualesDimensiones){
+                   return true;
+               }else{
+                   return false;
+               }
+               
+           }else{
+               return false;
+           }
+}
+
 
 function obtenerPrimeraDimension(matrizUno: number[][]): number | boolean{
     //Validaciones
@@ -90,18 +148,40 @@ function verificarTodosLosElementosDeUnArregloSonArreglo(
 
 function main(){
     const x = [ 
-        [1,2],
-        [3]
+        [3,4,9,8,6,6,6,6],
+        [3,4,9,8,6,6,6,6]
     ];
 
     const y = [
-        [1,2],
-        [3,4]
+        [3,4,9,8,6,6,6,6],
+        [3,4,9,8,6,6,6,6]
     ];
 
-    compararMatriz(x, y);
+    const resultado = compararMatriz(x, y);
+    console.log("RESULTADO: ", resultado);
 }
 
 main();
+
+
+/*
+ 1) Escriba un programa que verifique que dos matrices son iguales
+ 2) Sumar todas las filas y columnas cada fila y cada columna debe darme un resultado    
+ 3) intercambiar las diagonales
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
