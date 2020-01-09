@@ -1,0 +1,15 @@
+{
+  "name": "resta-ari",
+  "version": "1.1.0",
+  "description": "la resta de dos numeros",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "resta",
+    "sustraccion"
+  ],
+  "author": "Ariel Pillajo",
+  "license": "ISC"
+}

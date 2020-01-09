@@ -1,6 +1,6 @@
 console.log("Bienvenido a su calculadora a continuacion la lista de operaciones \n que puede realizar: ");
-console.log("1 Multiplicacion" + "\n" + "2 Division" + "3.Multiplicacion" + "4 Division"
-    + "5 Seno" + "7 E = mc^2");
+console.log("1 Suma" + "\n" + "2 Division" + "3.Multiplicacion" + "4 Division"
+    + "5 Seno" + "6 E = mc^2" + "");
 var operacionString = prompt("Escribe el numero que hace referencia a la operacion a realizar: ");
 var operacion = Number(operacionString);
 var valor1String;
