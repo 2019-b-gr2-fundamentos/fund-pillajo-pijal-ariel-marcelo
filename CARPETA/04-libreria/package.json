@@ -1,0 +1,20 @@
+{
+  "name": "ariel-milib",
+  "version": "1.0.0",
+  "description": "Libreria de Fundamentos EPN",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fundamentos",
+    "epn",
+    "libreria",
+    "ejemplo"
+  ],
+  "author": "Ariel Pillajo",
+  "license": "ISC"
+}

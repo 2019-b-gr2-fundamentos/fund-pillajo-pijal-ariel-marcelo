@@ -1,0 +1,20 @@
+{
+   "nombre" : "Ariel",
+   "apellido" : "Pillajo",
+   "edad" : 19,
+   "casado" : false,
+   "hijos" :  null,
+   "mascota" : ["perro"],
+   "primo" : {
+    "nombre" : "Louis",
+    "apellido" : "Pillajo",
+    "edad" : 30,
+    "casado" : true,
+    "hijos" :  null,
+    "mascota" : ["gato"]
+   },
+
+   "author" : "Ariel Pillajo",
+   "license" : "ISC"
+
+}
