@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ariel-milib": "^1.0.0"
+    "ariel-milib": "1.1.0"
   }
 }
