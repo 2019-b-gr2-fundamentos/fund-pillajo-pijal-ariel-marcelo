@@ -1,0 +1,15 @@
+{
+  "name": "06-estructuras-de-datos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "prompts": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "( tsc 02-crud.ts || echo) && node 02-crud.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

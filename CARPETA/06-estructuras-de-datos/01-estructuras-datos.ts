@@ -3,10 +3,6 @@ import { Duenio } from "./interfaces/duenio.interface";
 import  {AnimalPerrito }  from  './interfaces/animal-perrito-interfaces'
 //  ./ --> Relativo a donde esta el archivo
 // si no tiene esta notacion al inicio, busca en los note-mojos donde estan nuestras dependencias
-
-
-
-
 // booleano
 // cuerda
 // nulo -> objeto
@@ -73,7 +69,7 @@ poliPerroAmarillo.duenio = dueniopoliPerroAmarillo;
 poliPerroAmarillo.edad = 4;
 poliPerroAmarillo.vacunado = true;
 
-// Accerdera los datos de la estructura 
+// Accerderr a los datos de la estructura 
 
 console.log(poliPerroAmarillo.duenio.nombres);
 console.log(poliPerroAmarillo.duenio.apellidos);
