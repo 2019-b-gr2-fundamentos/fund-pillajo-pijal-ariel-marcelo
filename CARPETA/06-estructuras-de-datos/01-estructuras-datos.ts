@@ -1,6 +1,11 @@
 
-
+import { Duenio } from "./interfaces/duenio.interface";
 import  {AnimalPerrito }  from  './interfaces/animal-perrito-interfaces'
+//  ./ --> Relativo a donde esta el archivo
+// si no tiene esta notacion al inicio, busca en los note-mojos donde estan nuestras dependencias
+
+
+
 
 // booleano
 // cuerda
@@ -23,6 +28,8 @@ const  ejemploEstructura  =  {
     edadActual : edad ,  // variables
     noEsNecesario : true,  // ultima coma ok
 }
+
+ejemploEstructura
 // Estructura de datos en lenguaje NO TIPADO
 const  poliPerro  =  {
     nombreCientifico : 'Canis Lupus Familiaris' ,
@@ -39,38 +46,39 @@ console.log(poliPerro.nombre) ;  // Canis Lupus Familiaris
 const  poliPerroAmarillo : AnimalPerrito  =  {
     nombreCientifico : 'Canis Lupus Familiaris' ,
     nombre : 'Amarillo' ,
-    clan : null // A cualquier propiedad de la estructura
-               // se puede poner "nulo"
-    // edad: 4,
+    clan : null, // A cualquier propiedad de la estructura
+                 // se puede poner "nulo"
+    //edad: 4,
     // hijos: nulo,
     // perritas: [],
     // vacunado: falso,
 }
 
+poliPerroAmarillo
 
-import { Duenio } from "./interfaces/duenio.interface";
 
-const duenioPoliPerroAmarillo: Duenio = {
+const dueniopoliPerroAmarillo: Duenio = {
 
-    
+    // Al usar Ctrl + Space , sabemos que datos son oligatorios a llenar
+    nombres: "Ariel",
+    apellidos: "Pillajo",
+    fechaNacimiento: 2,
+    mascotasPerros: [ poliPerroAmarillo ]
     
 }
 
-//Guardar datos en una estructura de datos
-poliPeroAmarillo.duenio = duenioPoliPerroAmarillo;
+// Guardar datos en una estructura de datos
+
+poliPerroAmarillo.duenio = dueniopoliPerroAmarillo;
 poliPerroAmarillo.edad = 4;
 poliPerroAmarillo.vacunado = true;
 
-//Acceder a los datos de una estructura de datos
+// Accerdera los datos de la estructura 
 
-console.log(poliPerroAmarillo.duenio.nombre);
-
-
-
-
-
-
-
+console.log(poliPerroAmarillo.duenio.nombres);
+console.log(poliPerroAmarillo.duenio.apellidos);
+console.log(poliPerroAmarillo.nombre);
+console.log(poliPerroAmarillo.edad);
 
 
 
