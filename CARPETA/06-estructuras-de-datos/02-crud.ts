@@ -8,6 +8,7 @@ function main(){
     // sudo npm uninstall -g tsc -> Linux Mac 
     // sudo npm install -g typescript --> Linux Mac
     //obtenerDatosAnimalPerrito();//AsincronsOnteber
+    // 
     obtenerDatosAnimalPerritoSincrona()// Sincrona
     .then()
     .catch();
