@@ -2,7 +2,7 @@ import { leerArchivo } from "./02-leer-archivo"
 import { escribirArchivo } from "./03-Escribir-Archivo";
 import { Estudiante } from "./interfaces/estudiante.interface";
 import * as prompts from 'prompts';
-// como vamos a trabajar con el pompt que convierte en promesas rabajamos con una funcion asincrona
+// como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona
 async function main(){
 let contador = 1;
 const contenidoArchivo = leerArchivo(
