@@ -37,18 +37,38 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _02_leer_archivo_1 = require("./02-leer-archivo");
+var _03_Escribir_Archivo_1 = require("./03-Escribir-Archivo");
 var prompts = require("prompts");
 // como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona s
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var contador, contenidoArchivo, arregloCargadoDeArchivo, arregloEstudiantes, arregloPreguntas, respuestaEstudiante, NuevoRegistro, respuestaEstudianteDos, NuevoRegistroUno, idABuscar, indiceEncontrado, nombreEditar, buscar, EstudianteEncontrado;
+        var contador, contenidoArchivo, arregloCargadoDeArchivo, minimoId, arregloEstudiantes, arregloPreguntas, respuestaEstudiante, NuevoRegistro, respuestaEstudianteDos, NuevoRegistroUno, idABuscar, indiceEncontrado, nombreEditar, buscar, EstudianteEncontrado, arregloTexto, arregloCargadoDeArchivo, arregloCargadoDeArchivo_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     contador = 1;
                     contenidoArchivo = _02_leer_archivo_1.leerArchivo('./ejemplo.txt');
                     console.log('contenidoArchivo', contenidoArchivo);
-                    arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
+                    try {
+                        arregloCargadoDeArchivo = JSON
+                            .parse(contenidoArchivo);
+                    }
+                    catch (error) {
+                        arregloCargadoDeArchivo = [];
+                        console.error('Error parseado');
+                    }
+                    minimoId = -1;
+                    arregloCargadoDeArchivo
+                        .forEach(// No envia nada ni recibe nada
+                    //Iterar
+                    function (valorActual) {
+                        var idActual = valorActual.id;
+                        if (idActual > minimoId) {
+                            minimoId = idActual;
+                        }
+                        minimoId = minimoId + 1;
+                        contador = minimoId;
+                    });
                     arregloEstudiantes = arregloCargadoDeArchivo;
                     arregloPreguntas = [
                         {
@@ -120,6 +140,17 @@ function main() {
                         return valorActual.nombre == buscar.nombre;
                     });
                     console.log(EstudianteEncontrado);
+                    arregloTexto = JSON.stringify(arregloEstudiantes);
+                    console.log(arregloTexto);
+                    _03_Escribir_Archivo_1.escribirArchivo('./ejemplo.txt', arregloTexto);
+                    try {
+                        arregloCargadoDeArchivo_1 = JSON
+                            .parse(' Mama ');
+                    }
+                    catch (error) {
+                        arregloCargadoDeArchivo = [];
+                        console.error('Error parseado');
+                    }
                     return [2 /*return*/];
             }
         });
