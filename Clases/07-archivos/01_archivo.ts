@@ -2,7 +2,7 @@ import { leerArchivo } from "./02-leer-archivo"
 import { escribirArchivo } from "./03-Escribir-Archivo";
 import { Estudiante } from "./interfaces/estudiante.interface";
 import * as prompts from 'prompts';
-// como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona
+// como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona s
 async function main(){
 let contador = 1;
 const contenidoArchivo = leerArchivo(
@@ -28,9 +28,11 @@ const contenidoArchivo = leerArchivo(
        nombre: respuestaEstudiante.nombre
    };
 
+
+
    contador = contador + 1;
    arregloEstudiantes.push(NuevoRegistro);
-
+ 
    const respuestaEstudianteDos = await prompts(arregloPreguntas);
 
    const NuevoRegistroUno = {
@@ -56,7 +58,7 @@ const idABuscar = await prompts(
 )
 
 // esta funcion  acepta otra funcion como dato de entrada
-const indiceEncontrado = arregloEstudiantes.findIndex( // return CONICION
+const indiceEncontrado = arregloEstudiantes.findIndex( // return CONDICION
      function(valorActual, indice, arreglo){
 
 
@@ -87,7 +89,7 @@ const buscar = await prompts(
         message: 'Buscar por ID o por nombre'
     }
 );
-
+console.log("ASTA");
 const EstudianteEncontrado = arregloEstudiantes
     .find(
          function(valorActual){
@@ -117,4 +119,4 @@ const EstudianteEncontrado = arregloEstudiantes
     */
 }
 
-main().then().catch();
+main();

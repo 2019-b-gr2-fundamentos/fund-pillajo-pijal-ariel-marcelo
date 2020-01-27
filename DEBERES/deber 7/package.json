@@ -1,0 +1,14 @@
+{
+  "name": "deber-7",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "(tsc Fechas-de-Cumpleaños.ts --target ES5 || echo) && node Fechas-de-Cumpleaños.js "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompts": "^2.3.0"
+  }
+}

@@ -45,9 +45,8 @@ function main() {
     // sudo npm uninstall -g tsc -> Linux Mac 
     // sudo npm install -g typescript --> Linux Mac
     //obtenerDatosAnimalPerrito();//AsincronsOnteber
-    obtenerDatosAnimalPerritoSincrona() // Sincrona
-        .then()
-        .catch();
+    // 
+    obtenerDatosAnimalPerritoSincrona(); // Sincrona
 }
 function obtenerDatosAnimalPerrito() {
     // Paradigma de programacion 
@@ -56,7 +55,7 @@ function obtenerDatosAnimalPerrito() {
     var Promesaedad = prompts({
         type: 'number',
         name: 'edad',
-        message: 'Puedes darme tu edad?'
+        message: 'Puedes darme tu Nombre?'
     });
     console.log(Promesaedad);
     Promesaedad
@@ -85,7 +84,7 @@ function obtenerDatosAnimalPerrito() {
 }
 function obtenerDatosAnimalPerritoSincrona() {
     return __awaiter(this, void 0, void 0, function () {
-        var preguntas, RespuestaEdad;
+        var preguntas, RespuestaEdad, RES, ant, miArray;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
@@ -95,7 +94,7 @@ function obtenerDatosAnimalPerritoSincrona() {
                         {
                             type: 'number',
                             name: 'Edad',
-                            message: 'Puedes darme tu nombre?'
+                            message: 'Puedes darme tu Edad?'
                         },
                         {
                             type: 'text',
@@ -108,11 +107,18 @@ function obtenerDatosAnimalPerritoSincrona() {
                             message: 'Puedes darme tu cedula'
                         }
                     ];
+                    typeof (preguntas);
                     return [4 /*yield*/, prompts(preguntas)];
                 case 1:
                     RespuestaEdad = _a.sent();
                     console.log('Repuesta', RespuestaEdad);
                     console.log('Fin');
+                    RES = RespuestaEdad;
+                    ant = JSON.stringify(RES);
+                    console.log(ant);
+                    miArray = [];
+                    miArray.push(ant);
+                    console.log(miArray[0]);
                     return [2 /*return*/];
             }
         });

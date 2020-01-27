@@ -11,18 +11,19 @@ function main(){
     // 
     obtenerDatosAnimalPerritoSincrona()// Sincrona
     .then()
-    .catch();
+    .catch()
 }
 
 function obtenerDatosAnimalPerrito(){
 // Paradigma de programacion 
+
 
 // Sincrono vs Asincrono
    console.log('Inicio'); 
    const Promesaedad = prompts({
        type: 'number',
        name: 'edad',
-       message: 'Puedes darme tu edad?'
+       message: 'Puedes darme tu Nombre?'
    });
    
      console.log(Promesaedad);
@@ -37,22 +38,22 @@ function obtenerDatosAnimalPerrito(){
             message: 'Puedes darme tu nombre?'
         });
           
-        console.log(PromesaNombre);
-        PromesaNombre
+           console.log(PromesaNombre);
+           PromesaNombre
            .then(
-               (datos)=>{
+               (datos)=>
+               {
                    console.log('datos2',datos)
                }
            )
 
-           .catch(
-               (error)=>{
-                   console.log('Error',error);
-
-                      
+                .catch(
+                   (error)=>
+                   {
+                      console.log('Error',error);             
                 
-               }
-           )
+                   }
+                )
            
        }
     )
@@ -65,19 +66,24 @@ function obtenerDatosAnimalPerrito(){
    console.log('Fin');
 }
 
-import {RespuestaEdad} from './interfaces/repuesta-edad.interface.';
+
+
+
+
+//import {RespuestaEdad} from './interfaces/repuesta-edad.interface.';
 import {RespuestaNombre} from "./interfaces/respuesta-nombre.interface";
 
 async function obtenerDatosAnimalPerritoSincrona(){// Sincrona
                                                    // Asincro
     console.log('Inicio'); 
+
     const preguntas = [
         {
             type:'number',
             name:'Edad',
-            message: 'Puedes darme tu nombre?'
+            message: 'Puedes darme tu Edad?'
 
-        },
+        },   
         {
             type: 'text',
             name: 'nombre',
@@ -90,9 +96,22 @@ async function obtenerDatosAnimalPerritoSincrona(){// Sincrona
         }
 
     ]
+
+   typeof(preguntas); 
+ 
    const RespuestaEdad  = await prompts(preguntas);
    console.log('Repuesta', RespuestaEdad);
    console.log('Fin');
+   let RES = RespuestaEdad;
+  let ant = JSON.stringify(RES);
+  console.log(ant);
+  let miArray = [];
+  miArray.push(ant);
+  console.log(miArray[0]);
+
+ 
+
+
 }
 
 main();

@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var _02_leer_archivo_1 = require("./02-leer-archivo");
 var prompts = require("prompts");
-// como vamos a trabajar con el pompt que convierte en promesas rabajamos con una funcion asincrona
+// como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona s
 function main() {
     return __awaiter(this, void 0, void 0, function () {
         var contador, contenidoArchivo, arregloCargadoDeArchivo, arregloEstudiantes, arregloPreguntas, respuestaEstudiante, NuevoRegistro, respuestaEstudianteDos, NuevoRegistroUno, idABuscar, indiceEncontrado, nombreEditar, buscar, EstudianteEncontrado;
@@ -86,7 +86,7 @@ function main() {
                     ];
                 case 3:
                     idABuscar = _a.sent();
-                    indiceEncontrado = arregloEstudiantes.findIndex(// return CONICION
+                    indiceEncontrado = arregloEstudiantes.findIndex(// return CONDICION
                     function (valorActual, indice, arreglo) {
                         console.log(valorActual);
                         console.log(indice);
@@ -112,6 +112,7 @@ function main() {
                         })];
                 case 5:
                     buscar = _a.sent();
+                    console.log("ASTA");
                     EstudianteEncontrado = arregloEstudiantes
                         .find(function (valorActual) {
                         console.log(valorActual.nombre);
@@ -124,4 +125,4 @@ function main() {
         });
     });
 }
-main().then().catch();
+main();
