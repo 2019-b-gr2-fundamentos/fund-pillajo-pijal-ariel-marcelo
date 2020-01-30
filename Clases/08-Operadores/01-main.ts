@@ -1,3 +1,5 @@
+import {filter} from './02-filtrer';
+
 function main(){
     const arregloEstudiantes: any = [  // no es una buena practica tiparle con any pero funciona
         {id:1, nombre: 'Ariel', nota: 7},
@@ -89,7 +91,7 @@ function main(){
        //         Si ninguno cumple devuelve false
        // Enviamos -> Condicion 
        // Recibir -> Booleano
-
+/* 1
 
        const respuestaEvery = arregloEstudiantes
 
@@ -103,6 +105,7 @@ function main(){
 
             console.log('respuestaEvery', respuestaEvery);
             console.log('arregloEstudiantes', arregloEstudiantes);
+*/
 
 
      // Reduce --> Devuelve un valor 
@@ -110,7 +113,7 @@ function main(){
      // Recibir --> Valor 
      
      // reduce resive 2 valores
-
+/*
      const respuestaReduce = arregloEstudiantes
       .reduce(
           function(acumuldor, valorActual, i, arr){ //
@@ -126,7 +129,21 @@ function main(){
       console.log('Promedio', respuestaReduce / arregloEstudiantes.length); // para dividir por la 
       console.log('repuestaArreglo', arregloEstudiantes);
 
+*/
 
+    const respuestaFilterNuestro = filter(
+        arregloEstudiantes,
+        function(valorActual, i, arr){
+            console.log('Valor', valorActual);
+            console.log('Indice', i);
+            console.log('Arreglo', arr);
+            return valorActual.nota >= 7
+        }
+
+    );
+
+    console.log('respuestaFilterNuestro', respuestaFilterNuestro);
+    console.log('valorEstudiantes', arregloEstudiantes);
 
 
 };
