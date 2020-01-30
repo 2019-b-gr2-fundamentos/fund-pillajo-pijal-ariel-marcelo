@@ -1,4 +1,4 @@
-import {filter} from './02-filtrer';
+import { filter } from './02-filtrer';
 
 function main(){
     const arregloEstudiantes: any = [  // no es una buena practica tiparle con any pero funciona
@@ -23,21 +23,21 @@ function main(){
 
        );
 
-       //console.log(respuestaForEach);// undefained
+       console.log(respuestaForEach);// undefained
 
 
        //Map -> Transformar el arreglo
        // Enviamos -> valorActual modificado
        // RECIBIR -> Nuevo arreglo 
 
-       const respuestaMap = arregloEstudiantes
-       .map(
+       const respuestaMap = arregloEstudiantes.map(
+           
            function(valorActual, i, arreglo){
                const nuevoObjeto = {
             
                    id: valorActual.id,
                    nombre: valorActual.nombre,
-                  // nota: valorActual.nota,
+                   nota: valorActual.nota,
                    nota20: valorActual.nota*2
                };
 
@@ -46,8 +46,8 @@ function main(){
            }
        );
 
-       //console.log('RespuestaMap', respuestaMap);
-       //console.log('Arreglo de Estudiantes', arregloEstudiantes);
+       console.log('RespuestaMap', respuestaMap);
+       console.log('Arreglo de Estudiantes', arregloEstudiantes);
 
        // Filter --> filtrar el arreglo
        // Enviamos -> Nuevo arreglo con valores filtrados 
@@ -57,12 +57,13 @@ function main(){
            function(valorActual, i, arreglo){
               const condicion7 = valorActual.nota >= 7;
               const condicion5 = valorActual.nota < 5;
+              //Condiciones es un truty o un false
               return condicion7 || condicion5;
            }
        );
 
-       //console.log('respuestaFilter', respuestaFilter);
-       //console.log('arregloEstudiates', arregloEstudiantes);
+       console.log('respuestaFilter', respuestaFilter);
+       console.log('arregloEstudiates', arregloEstudiantes);
         
        // And -> EVERY(tODOS CUMPLEN ) / Or -> some (uno cumpla)
        // Some -> Devuelve verdadero o falso dependiendo de la condicion
@@ -81,8 +82,8 @@ function main(){
             }
         );
 
-        //console.log('respuestaSome', respuestaSome);
-        //console.log('arreglo Estudiantes', arregloEstudiantes);
+        console.log('respuestaSome', respuestaSome);
+        console.log('arreglo Estudiantes', arregloEstudiantes);
 
 
 
@@ -91,7 +92,7 @@ function main(){
        //         Si ninguno cumple devuelve false
        // Enviamos -> Condicion 
        // Recibir -> Booleano
-/* 1
+
 
        const respuestaEvery = arregloEstudiantes
 
@@ -105,7 +106,7 @@ function main(){
 
             console.log('respuestaEvery', respuestaEvery);
             console.log('arregloEstudiantes', arregloEstudiantes);
-*/
+
 
 
      // Reduce --> Devuelve un valor 
@@ -113,7 +114,7 @@ function main(){
      // Recibir --> Valor 
      
      // reduce resive 2 valores
-/*
+
      const respuestaReduce = arregloEstudiantes
       .reduce(
           function(acumuldor, valorActual, i, arr){ //
@@ -129,7 +130,7 @@ function main(){
       console.log('Promedio', respuestaReduce / arregloEstudiantes.length); // para dividir por la 
       console.log('repuestaArreglo', arregloEstudiantes);
 
-*/
+
 
     const respuestaFilterNuestro = filter(
         arregloEstudiantes,
