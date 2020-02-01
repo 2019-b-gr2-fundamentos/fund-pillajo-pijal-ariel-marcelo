@@ -37,19 +37,61 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _02_leer_archivo_1 = require("./02-leer-archivo");
+var prompts = require("prompts");
 /*
 import { escribirArchivo } from "./03-Escribir-Archivo";
-import { Estudiante } from "./interfaces/estudiante.interface";
-import * as prompts from 'prompts';
+
 */
 // como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona s
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var contenidoArchivo;
+        var contador, arregloCargadoDeArchivo, contenidoArchivo, arregloEstudiantes, arregloPreguntas, respuestaEstudiante, NuevoRegistro, respuestaEstudianteDos, NuevoRegistroUno;
         return __generator(this, function (_a) {
-            contenidoArchivo = _02_leer_archivo_1.leerArchivo("./ejemplo.txt");
-            console.log('contenidoArchivo', contenidoArchivo);
-            return [2 /*return*/];
+            switch (_a.label) {
+                case 0:
+                    contador = 1;
+                    contenidoArchivo = _02_leer_archivo_1.leerArchivo("./ejemplo.txt");
+                    console.log('contenidoArchivo', contenidoArchivo);
+                    try {
+                        arregloCargadoDeArchivo = JSON
+                            .parse(contenidoArchivo);
+                    }
+                    catch (error) {
+                        arregloCargadoDeArchivo = [
+                            { "id": 1, "nombre": "Juanito" },
+                            { "id": 2, "nombre": "Pepito" }
+                        ];
+                        console.error('Error parseado archivo');
+                    }
+                    console.log('nuevo arreglo parseado', arregloCargadoDeArchivo);
+                    arregloEstudiantes = arregloCargadoDeArchivo;
+                    arregloPreguntas = [
+                        {
+                            type: 'text',
+                            name: 'nombre',
+                            message: 'Ingresa Nombre'
+                        }
+                    ];
+                    return [4 /*yield*/, prompts(arregloPreguntas)];
+                case 1:
+                    respuestaEstudiante = _a.sent();
+                    NuevoRegistro = {
+                        id: contador,
+                        nombre: respuestaEstudiante.nombre
+                    };
+                    contador = contador + 1;
+                    arregloEstudiantes.push(NuevoRegistro);
+                    return [4 /*yield*/, prompts(arregloPreguntas)];
+                case 2:
+                    respuestaEstudianteDos = _a.sent();
+                    NuevoRegistroUno = {
+                        id: contador,
+                        nombre: respuestaEstudianteDos.nombre
+                    };
+                    contador = contador + 1;
+                    arregloEstudiantes.push(NuevoRegistroUno);
+                    return [2 /*return*/];
+            }
         });
     });
 }

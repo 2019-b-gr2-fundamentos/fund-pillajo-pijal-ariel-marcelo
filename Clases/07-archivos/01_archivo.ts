@@ -10,10 +10,27 @@ import { escribirArchivo } from "./03-Escribir-Archivo";
 // como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona s
 
 async function main(){
+
     let contador = 1;
     let arregloCargadoDeArchivo;
 
+    const contenidoArchivo = leerArchivo( "./ejemplo.txt");
+    
+    console.log('contenidoArchivo', contenidoArchivo);
 
+  try{
+       arregloCargadoDeArchivo = JSON
+      .parse(contenidoArchivo);
+  } catch(error){
+      arregloCargadoDeArchivo = [
+          {"id":1, "nombre":"Juanito"},
+          {"id":2, "nombre":"Pepito"}
+      ];
+    console.error('Error parseado archivo');   
+  }
+  
+
+    console.log('nuevo arreglo parseado', arregloCargadoDeArchivo); 
     const arregloEstudiantes: Estudiante[] = arregloCargadoDeArchivo;
     const arregloPreguntas =[
         {
@@ -69,22 +86,7 @@ arregloEstudiantes.push(NuevoRegistroUno);
 
 
 
-    const contenidoArchivo = leerArchivo( "./ejemplo.txt");
-    console.log('contenidoArchivo', contenidoArchivo);
 
-  try{
-       arregloCargadoDeArchivo = JSON
-      .parse(contenidoArchivo);
-  } catch(error){
-      arregloCargadoDeArchivo = [
-          {"id":1, "nombre":"Juanito"},
-          {"id":2, "nombre":"Pepito"}
-      ];
-    console.error('Error parseado archivo');   
-  }
-  
-
-    console.log('nuevo arreglo parseado', arregloCargadoDeArchivo); 
   
 /*1
 

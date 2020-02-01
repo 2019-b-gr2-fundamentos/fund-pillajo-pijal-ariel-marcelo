@@ -1,11 +1,11 @@
 import * as fs from 'fs';
 
-export  function leerArchivo(): string { // asyn convierte en promesa nuestra funcion
+export  function leerArchivo( path: string): string { // asyn convierte en promesa nuestra funcion
 
     console.log('Leer achivo');
+    
     let resultado = fs.readFileSync(
-        "./ejemplo.txt",
-        Path2D,     
+        path,     
        'utf-8' // codificacion 
     );
 
