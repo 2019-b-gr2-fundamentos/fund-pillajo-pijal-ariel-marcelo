@@ -19,8 +19,6 @@ try{
 } catch(error){
     arregloCargadoDeArchivo = [];
     console.error('Error parseado');
-    
-
 }
 
 /*
@@ -184,7 +182,7 @@ const EstudianteEncontrado = arregloEstudiantes
 */
 
 
-let arregloCargadoDeArchivo;
+// let arregloCargadoDeArchivo;
 
 
 try{

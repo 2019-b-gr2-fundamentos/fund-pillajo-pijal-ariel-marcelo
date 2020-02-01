@@ -1,11 +1,16 @@
 import { Cumpleañeros } from "./interfaces/Cumpleañeros";
 import * as prompts from './node_modules/prompts';
+import { leerArchivo } from "./leer-Archivo";
 
 async function main()
 {
 
     let GuardarCumpleaños: Cumpleañeros[] = [];
     let contador = 1;
+
+
+
+
 
     const UnCumpleañero  =
     [
@@ -41,9 +46,24 @@ async function main()
         }
 
     ]
+    function HayAlgoEnArchivo(){
+    const ArchivoLeido = leerArchivo(
+        './archivo-a-Exportar.txt',
+    );
+    
+    //try{
+        GuardarCumpleaños = JSON.parse(ArchivoLeido);
+    //}
+    //catch(error){
+        //GuardarCumpleaños = [];
+        //console.log("Error en el parseado");
+        
+    //}
 
+}
     async function Que_Desea_Hacer()
      {
+         HayAlgoEnArchivo();
         let Decide = await prompts
          ({
            type: 'text',

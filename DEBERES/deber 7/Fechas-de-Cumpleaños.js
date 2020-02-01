@@ -37,18 +37,31 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var prompts = require("./node_modules/prompts");
+var leer_Archivo_1 = require("./leer-Archivo");
 function main() {
     return __awaiter(this, void 0, void 0, function () {
+        function HayAlgoEnArchivo() {
+            var ArchivoLeido = leer_Archivo_1.leerArchivo('./archivo-a-Exportar.txt');
+            //try{
+            GuardarCumpleaños = JSON.parse(ArchivoLeido);
+            //}
+            //catch(error){
+            //GuardarCumpleaños = [];
+            //console.log("Error en el parseado");
+            //}
+        }
         function Que_Desea_Hacer() {
             return __awaiter(this, void 0, void 0, function () {
                 var Decide;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
-                        case 0: return [4 /*yield*/, prompts({
-                                type: 'text',
-                                name: 'eleccion',
-                                message: "¡¡No olvides otro cumpleaños jamas!!\n Seleccione una opcion\n 1. Crear\n 2. Actualizar\n 3. Borrar\n 4. Salir\n"
-                            })];
+                        case 0:
+                            HayAlgoEnArchivo();
+                            return [4 /*yield*/, prompts({
+                                    type: 'text',
+                                    name: 'eleccion',
+                                    message: "¡¡No olvides otro cumpleaños jamas!!\n Seleccione una opcion\n 1. Crear\n 2. Actualizar\n 3. Borrar\n 4. Salir\n"
+                                })];
                         case 1:
                             Decide = _a.sent();
                             switch (Decide.eleccion) {

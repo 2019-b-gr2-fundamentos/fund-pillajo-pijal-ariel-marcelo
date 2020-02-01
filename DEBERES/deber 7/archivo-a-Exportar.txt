@@ -1,0 +1,2 @@
+[{"id":100,"nombre":"Pepito","Apellido":"Paucara","Año_De_Nacimiento": 1938, "Mes_De_Nacimiento":"Abril","Dia_de_Nacimiento":7},
+{"id":50,"nombre":"Juanito", "Apellido":"Aventura","Año_De_Nacimiento": 1938, "Mes_De_Nacimiento":"Abril","Dia_de_Nacimiento":7}]
