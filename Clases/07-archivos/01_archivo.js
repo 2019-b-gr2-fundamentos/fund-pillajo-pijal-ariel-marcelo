@@ -37,122 +37,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var _02_leer_archivo_1 = require("./02-leer-archivo");
-var _03_Escribir_Archivo_1 = require("./03-Escribir-Archivo");
-var prompts = require("prompts");
+/*
+import { escribirArchivo } from "./03-Escribir-Archivo";
+import { Estudiante } from "./interfaces/estudiante.interface";
+import * as prompts from 'prompts';
+*/
 // como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona s
 function main() {
     return __awaiter(this, void 0, void 0, function () {
-        var contador, contenidoArchivo, arregloCargadoDeArchivo, minimoId, arregloEstudiantes, arregloPreguntas, respuestaEstudiante, NuevoRegistro, respuestaEstudianteDos, NuevoRegistroUno, idABuscar, indiceEncontrado, nombreEditar, buscar, EstudianteEncontrado, arregloTexto, arregloCargadoDeArchivo, arregloCargadoDeArchivo_1;
+        var contenidoArchivo;
         return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    contador = 1;
-                    contenidoArchivo = _02_leer_archivo_1.leerArchivo('./ejemplo.txt');
-                    console.log('contenidoArchivo', contenidoArchivo);
-                    try {
-                        arregloCargadoDeArchivo = JSON
-                            .parse(contenidoArchivo);
-                    }
-                    catch (error) {
-                        arregloCargadoDeArchivo = [];
-                        console.error('Error parseado');
-                    }
-                    minimoId = -1;
-                    arregloCargadoDeArchivo
-                        .forEach(// No envia nada ni recibe nada
-                    //Iterar
-                    function (valorActual) {
-                        var idActual = valorActual.id;
-                        if (idActual > minimoId) {
-                            minimoId = idActual;
-                        }
-                        minimoId = minimoId + 1;
-                        contador = minimoId;
-                    });
-                    arregloEstudiantes = arregloCargadoDeArchivo;
-                    arregloPreguntas = [
-                        {
-                            type: 'text',
-                            name: 'nombre',
-                            message: 'Ingresa Nombre'
-                        }
-                    ];
-                    return [4 /*yield*/, prompts(arregloPreguntas)];
-                case 1:
-                    respuestaEstudiante = _a.sent();
-                    NuevoRegistro = {
-                        id: contador,
-                        nombre: respuestaEstudiante.nombre
-                    };
-                    contador = contador + 1;
-                    arregloEstudiantes.push(NuevoRegistro);
-                    return [4 /*yield*/, prompts(arregloPreguntas)];
-                case 2:
-                    respuestaEstudianteDos = _a.sent();
-                    NuevoRegistroUno = {
-                        id: contador,
-                        nombre: respuestaEstudianteDos.nombre
-                    };
-                    contador = contador + 1;
-                    arregloEstudiantes.push(NuevoRegistroUno);
-                    console.log('Cual usuario quieres editar?');
-                    console.log(arregloEstudiantes);
-                    return [4 /*yield*/, prompts({
-                            type: 'number',
-                            name: 'id',
-                            message: 'ingresa el identificado del registro editar'
-                        })
-                        // esta funcion  acepta otra funcion como dato de entrada
-                    ];
-                case 3:
-                    idABuscar = _a.sent();
-                    indiceEncontrado = arregloEstudiantes.findIndex(// return CONDICION
-                    function (valorActual, indice, arreglo) {
-                        console.log(valorActual);
-                        console.log(indice);
-                        console.log(arreglo);
-                        return valorActual.id == idABuscar.id; // No devuelbe el indice
-                    } // si encuentra devuelve el indice
-                    ) // no encuentra
-                    ;
-                    console.log('Indice encontrado', indiceEncontrado);
-                    return [4 /*yield*/, prompts({
-                            type: 'text',
-                            name: 'nombre',
-                            message: 'Ingresa el nuevo NOmbre'
-                        })];
-                case 4:
-                    nombreEditar = _a.sent();
-                    arregloEstudiantes[indiceEncontrado].nombre = nombreEditar.nombre;
-                    console.log(arregloEstudiantes);
-                    return [4 /*yield*/, prompts({
-                            type: 'text',
-                            name: 'nombre',
-                            message: 'Buscar por ID o por nombre'
-                        })];
-                case 5:
-                    buscar = _a.sent();
-                    console.log("ASTA");
-                    EstudianteEncontrado = arregloEstudiantes
-                        .find(function (valorActual) {
-                        console.log(valorActual.nombre);
-                        console.log(buscar.nombre);
-                        return valorActual.nombre == buscar.nombre;
-                    });
-                    console.log(EstudianteEncontrado);
-                    arregloTexto = JSON.stringify(arregloEstudiantes);
-                    console.log(arregloTexto);
-                    _03_Escribir_Archivo_1.escribirArchivo('./ejemplo.txt', arregloTexto);
-                    try {
-                        arregloCargadoDeArchivo_1 = JSON
-                            .parse(' Mama ');
-                    }
-                    catch (error) {
-                        arregloCargadoDeArchivo = [];
-                        console.error('Error parseado');
-                    }
-                    return [2 /*return*/];
-            }
+            contenidoArchivo = _02_leer_archivo_1.leerArchivo("./ejemplo.txt");
+            console.log('contenidoArchivo', contenidoArchivo);
+            return [2 /*return*/];
         });
     });
 }

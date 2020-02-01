@@ -1,68 +1,17 @@
 import { leerArchivo } from "./02-leer-archivo"
-import { escribirArchivo } from "./03-Escribir-Archivo";
 import { Estudiante } from "./interfaces/estudiante.interface";
 import * as prompts from 'prompts';
-// como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona s
-async function main(){
-let contador = 1;
-const contenidoArchivo = leerArchivo(
-    './ejemplo.txt'
-);
-    console.log('contenidoArchivo', contenidoArchivo);
-    //const arregloCargadoDeArchivo = JSON.parse('{"nombre":adrian}');
-    
-let arregloCargadoDeArchivo;
-
-try{
-     arregloCargadoDeArchivo = JSON
-    .parse(contenidoArchivo);
-} catch(error){
-    arregloCargadoDeArchivo = [];
-    console.error('Error parseado');
-    
-
-}
 
 /*
-try{
-    
-    console.log('1');
-    console.log('2');
-    console.log('3');
-    //Syntaxis herror
-    let = 1;
-    let = 2;
-    console.log(11111111111111111111111111111111111111111111111111111111111111111111111111111122222222222212222222222222222);
-    throw new ReferenceError('El Archivo');
-    console.log("0"/0);
-    //throw new Error("eL archivo esta mal parseado ")
-    console.log('4');
-    console.log('5');
-}catch(error){
-    console.log(error)
-    console.log(':3');
+import { escribirArchivo } from "./03-Escribir-Archivo";
 
-}
 */
 
-//OPeradores
+// como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona s
 
-let minimoId = -1;
-arregloCargadoDeArchivo
-    .forEach(// No envia nada ni recibe nada
-        //Iterar
-    
-    function(valorActual){ 
-
-        const idActual = valorActual.id;
-        if(idActual > minimoId){
-            minimoId = idActual
-        }
-
-        minimoId = minimoId + 1;
-        contador = minimoId;
-        
-});
+async function main(){
+    let contador = 1;
+    let arregloCargadoDeArchivo;
 
 
     const arregloEstudiantes: Estudiante[] = arregloCargadoDeArchivo;
@@ -97,7 +46,100 @@ arregloCargadoDeArchivo
 contador = contador + 1;
 arregloEstudiantes.push(NuevoRegistroUno);
 
+// PARSEAR --> TEXTO --> Estructura en memoria 
 
+/*
+    const arregloCargadoDeArchivo = JSON.parse('{"nombre":"adrian"}');  // Esta es la manera correcta de
+                                                //  escribir una estructura en texto para luego parsearla
+    console.log('contenidoArchivo', arregloCargadoDeArchivo );
+*/
+    
+/*
+// se identifica como tipo texto
+{
+    "nombre": "Ariel"
+}
+
+// otro tipo seria el siguiente 
+<universidad>
+   <facultad></facultad>
+</universidad>
+
+*/
+
+
+
+    const contenidoArchivo = leerArchivo( "./ejemplo.txt");
+    console.log('contenidoArchivo', contenidoArchivo);
+
+  try{
+       arregloCargadoDeArchivo = JSON
+      .parse(contenidoArchivo);
+  } catch(error){
+      arregloCargadoDeArchivo = [
+          {"id":1, "nombre":"Juanito"},
+          {"id":2, "nombre":"Pepito"}
+      ];
+    console.error('Error parseado archivo');   
+  }
+  
+
+    console.log('nuevo arreglo parseado', arregloCargadoDeArchivo); 
+  
+/*1
+
+let contador = 3;
+
+//OPeradores
+
+let minimoId = -1;
+
+arregloCargadoDeArchivo
+    .forEach(// No envia nada ni recibe nada
+             //Iterar
+    
+    function(valorActual){ 
+
+        const idActual = valorActual.id;
+        if(idActual > minimoId){
+            minimoId = idActual
+        }
+
+    minimoId = minimoId + 1;
+    contador = minimoId;
+        
+    });
+
+    console.log(minimoId);
+    console.log(arregloCargadoDeArchivo);
+
+/*
+try{
+    
+    console.log('1');
+    console.log('2');
+    console.log('3');
+    //Syntaxis herror
+    let = 1;
+    let = 2;
+    console.log(11111111111111111111111111111111111111111111111111111111111111111111111111111122222222222212222222222222222);
+    throw new ReferenceError('El Archivo');
+    console.log("0"/0);
+    //throw new Error("eL archivo esta mal parseado ")
+    console.log('4');
+    console.log('5');
+}catch(error){
+    console.log(error)
+    console.log(':3');
+
+}
+*/
+
+
+
+
+
+/*
 
 
 console.log('Cual usuario quieres editar?');
@@ -166,25 +208,15 @@ const EstudianteEncontrado = arregloEstudiantes
         arregloTexto
         );
 
-
-
-
-/*
-
-// Parsear -> Texto -> Estructura 
-
-
-{
-    "nombre"
-}
-
-<Universidad>
-<hkhkf><sdfkdfsjk>
-
 */
 
 
-let arregloCargadoDeArchivo;
+
+
+
+//let arregloCargadoDeArchivo;
+
+/*
 
 
 try{
@@ -196,7 +228,7 @@ try{
 }
 
 
-
+*/
 
 
 
@@ -209,6 +241,5 @@ try{
     
     console.log(TextoLeido + nuevoContenido);
     */
-}
-
-main();
+   
+}main();

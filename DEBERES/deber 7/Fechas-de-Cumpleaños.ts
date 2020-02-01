@@ -88,13 +88,7 @@ async function main()
         
         const Respuesta = 
         {   
-            id: contador,
-            nombre: DatosCumpleañeros.nombre,
-            apellido: DatosCumpleañeros.apellido,
-            Año_De_Nacimiento: DatosCumpleañeros.Año_De_Nacimiento, 
-            Mes_De_Nacimiento: DatosCumpleañeros.Mes_De_Nacimiento,
-            Dia_De_Nacimiento: DatosCumpleañeros.Dia_De_Nacimiento,
-            Me_Gusta: DatosCumpleañeros.Me_Gusta 
+            id: contador, nombre: DatosCumpleañeros.nombre, apellido: DatosCumpleañeros.apellido, Año_De_Nacimiento: DatosCumpleañeros.Año_De_Nacimiento,  Mes_De_Nacimiento: DatosCumpleañeros.Mes_De_Nacimiento, Dia_De_Nacimiento: DatosCumpleañeros.Dia_De_Nacimiento, Me_Gusta: DatosCumpleañeros.Me_Gusta 
         };
 
         GuardarCumpleaños.push(Respuesta); 
@@ -127,13 +121,7 @@ async function main()
             let Actualizado = await prompts(UnCumpleañero);       
             const RespuestaActualizada = 
             {   
-               id: indiceActualizado,
-               nombre: Actualizado.nombre,
-               apellido: Actualizado.apellido,
-               Año_De_Nacimiento: Actualizado.Año_De_Nacimiento, 
-               Mes_De_Nacimiento: Actualizado.Mes_De_Nacimiento,
-               Dia_De_Nacimiento: Actualizado.Dia_De_Nacimiento,
-               Me_Gusta: Actualizado.Me_Gusta 
+               id: indiceActualizado, nombre: Actualizado.nombre, apellido: Actualizado.apellido, Año_De_Nacimiento: Actualizado.Año_De_Nacimiento, Mes_De_Nacimiento: Actualizado.Mes_De_Nacimiento, Dia_De_Nacimiento: Actualizado.Dia_De_Nacimiento, Me_Gusta: Actualizado.Me_Gusta 
             };
 
             GuardarCumpleaños[indiceEncontrado] = RespuestaActualizada;
@@ -156,6 +144,27 @@ async function main()
                 return valorActual.id == Buscar.id; 
             } 
         );
+
+        let minimoId = indiceEncontrado;
+
+        GuardarCumpleaños.splice(indiceEncontrado,1);
+
+        GuardarCumpleaños
+        .forEach(
+           function(valorActual){ 
+
+              const idActual = valorActual.id;
+            if(idActual > minimoId){
+                minimoId = idActual
+                }
+
+             minimoId = minimoId + 1;
+             contador = minimoId;
+       
+         });
+
+   console.log(minimoId);
+   console.log(arregloCargadoDeArchivo);
      
         const Vacio = 
         {   
