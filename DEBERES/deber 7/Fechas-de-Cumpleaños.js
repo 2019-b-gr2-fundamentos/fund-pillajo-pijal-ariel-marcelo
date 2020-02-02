@@ -49,7 +49,7 @@ function main() {
                         case 0: return [4 /*yield*/, prompts({
                                 type: 'text',
                                 name: 'eleccion',
-                                message: "¡¡No olvides otro cumpleaños jamas!!\n Seleccione una opcion\n 1. Crear\n 2. Actualizar\n 3. Borrar\n 4. Salir\n"
+                                message: "¡¡No olvides otro cumpleaños jamas!!\n Seleccione una opcion\n 1. Crear\n 2. Actualizar\n 3. Borrar\n 4. Salir\n 5. Consultar"
                             })];
                         case 1:
                             Decide = _a.sent();
@@ -74,6 +74,10 @@ function main() {
                                     ImprimeLista = JSON.stringify(GuardarCumpleaños);
                                     Escribir_cumples_1.escribirCumpleañeros("./ListadeCumpleañeros.txt", ImprimeLista);
                                     console.log("Adiosito");
+                                    break;
+                                }
+                                case '5': {
+                                    Consultar();
                                     break;
                                 }
                                 default:
@@ -215,13 +219,34 @@ function main() {
                 });
             });
         }
+        function Consultar() {
+            return __awaiter(this, void 0, void 0, function () {
+                var buscar, EstudianteEncontrado;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0: return [4 /*yield*/, prompts({
+                                type: 'text',
+                                name: 'nombre',
+                                message: 'Ingresa el nombre de la Persona a quien deseas encontrar'
+                            })];
+                        case 1:
+                            buscar = _a.sent();
+                            EstudianteEncontrado = GuardarCumpleaños.find(function (valorActual) {
+                                return valorActual.nombre == buscar.nombre;
+                            });
+                            console.log(EstudianteEncontrado);
+                            Que_Desea_Hacer();
+                            return [2 /*return*/];
+                    }
+                });
+            });
+        }
         var GuardarCumpleaños, contador, ListadeCumpleañeros, UnCumpleañero;
         return __generator(this, function (_a) {
             GuardarCumpleaños = [];
             contador = 1;
             ListadeCumpleañeros = leer_Cumples_1.leerArchivo('./ListadeCumpleañeros.txt');
             GuardarCumpleaños = JSON.parse(ListadeCumpleañeros);
-            Que_Desea_Hacer();
             UnCumpleañero = [
                 {
                     type: 'text',
@@ -254,6 +279,7 @@ function main() {
                     message: 'Dime lo que te Gusta'
                 }
             ];
+            Que_Desea_Hacer();
             return [2 /*return*/];
         });
     });

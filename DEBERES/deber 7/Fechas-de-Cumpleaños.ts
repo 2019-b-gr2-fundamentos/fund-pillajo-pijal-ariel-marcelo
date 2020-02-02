@@ -11,7 +11,7 @@ async function main()
     const ListadeCumpleañeros = leerArchivo('./ListadeCumpleañeros.txt');
     GuardarCumpleaños = JSON.parse(ListadeCumpleañeros);
 
-    Que_Desea_Hacer();
+
 
     const UnCumpleañero  =
     [
@@ -54,7 +54,7 @@ async function main()
          ({
            type: 'text',
            name: 'eleccion',    
-           message:"¡¡No olvides otro cumpleaños jamas!!\n Seleccione una opcion\n 1. Crear\n 2. Actualizar\n 3. Borrar\n 4. Salir\n"
+           message:"¡¡No olvides otro cumpleaños jamas!!\n Seleccione una opcion\n 1. Crear\n 2. Actualizar\n 3. Borrar\n 4. Salir\n 5. Consultar"
          });
     
          switch(Decide.eleccion)
@@ -82,6 +82,14 @@ async function main()
                 console.log("Adiosito");  
                 break;
             }
+
+            case '5':{
+
+                Consultar();
+                break;
+
+            }
+
             default:         
             {
                console.log("Opcion no Encontrada");
@@ -214,6 +222,24 @@ async function main()
 
         Que_Desea_Hacer();
     }
+    async function Consultar(){
+
+        const buscar = await prompts(
+            {
+                type: 'text',
+                name: 'nombre',
+                message: 'Ingresa el nombre de la Persona a quien deseas encontrar'
+            }
+        )
+        const EstudianteEncontrado = GuardarCumpleaños.find(
+            function(valorActual){
+                return valorActual.nombre == buscar.nombre;
+            }
+        );
+            console.log(EstudianteEncontrado);
+            Que_Desea_Hacer();
+    }  
     
+    Que_Desea_Hacer();
 }
 main();
