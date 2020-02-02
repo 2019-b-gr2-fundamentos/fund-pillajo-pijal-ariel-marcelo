@@ -1,16 +1,17 @@
 import { Cumpleañeros } from "./interfaces/Cumpleañeros";
 import * as prompts from './node_modules/prompts';
 import { leerArchivo } from "./leer-Cumples";
+import { escribirCumpleañeros} from "./Escribir-cumples"
 
 async function main()
 {
-
     let GuardarCumpleaños: Cumpleañeros[] = [];
     let contador = 1;
-
-    // Se guarda la lista ya Guardada
+    // Se Carga la lista ya Guardada
     const ListadeCumpleañeros = leerArchivo('./ListadeCumpleañeros.txt');
-    GuardarCumpleaños = JSON.parse(ListadeCumpleañeros)
+    GuardarCumpleaños = JSON.parse(ListadeCumpleañeros);
+
+    Que_Desea_Hacer();
 
     const UnCumpleañero  =
     [
@@ -46,7 +47,6 @@ async function main()
         }
 
     ];
-    
     async function Que_Desea_Hacer()
      {
 
@@ -61,7 +61,7 @@ async function main()
          {
              case '1': 
             { 
-              CrearCumpleañero();
+              IndiceNuncaRepetido();
               break;
             }     
              case '2': 
@@ -71,27 +71,42 @@ async function main()
             }
             case '3': 
             {
+                OrdenarCumpleañeros();
                 Eliminar();
                 break;
             }
             case '4':{
+
+                const ImprimeLista = JSON.stringify(GuardarCumpleaños)
+                escribirCumpleañeros("./ListadeCumpleañeros.txt", ImprimeLista);
                 console.log("Adiosito");  
                 break;
             }
             default:         
             {
-               Que_Desea_Hacer();
                console.log("Opcion no Encontrada");
+               Que_Desea_Hacer();
                break;
             }
          }
         
     }
+    function IndiceNuncaRepetido(){
+        
+        GuardarCumpleaños.forEach(
+            function(valorActual){
 
+                if(contador == valorActual.id){
+                    contador++;
+                }          
+            }
+        );
+        CrearCumpleañero();
+    }
     async function CrearCumpleañero()
     {
         let DatosCumpleañeros = await prompts (UnCumpleañero);
-        
+
         const Respuesta = 
         {   
             id: contador,
@@ -105,40 +120,39 @@ async function main()
 
         GuardarCumpleaños.push(Respuesta); 
         contador = contador + 1;
+        OrdenarCumpleañeros();
         Que_Desea_Hacer();
+        
     }
-
     function Actualizar() {
 
         OrdenarCumpleañeros()
         ReemplazarCumpleañero()
     }
-
     function OrdenarCumpleañeros(){
         let indice = 0;
-        let idPrimerCumpleañero = GuardarCumpleaños[indice].id
+        
         while(indice < GuardarCumpleaños.length){
+        let idPrimerCumpleañero = GuardarCumpleaños[indice].id
             GuardarCumpleaños.forEach(
+                
                 function (CumpleañeroTal, indiceCumpleañeroTal) {
-                    console.log('indiceCumpleañeroTal',indiceCumpleañeroTal);
-                    console.log('indice',indice);
-
-                    if(indice <= indiceCumpleañeroTal){
-
+                    if(indice < indiceCumpleañeroTal){
                         if(idPrimerCumpleañero > CumpleañeroTal.id){ 
                              console.log('indiceCumpleañeroTal',indiceCumpleañeroTal);
                              console.log('indice',indice);
                              let Guardardo = CumpleañeroTal;
-                            GuardarCumpleaños.splice(indiceCumpleañeroTal,1);
-                            GuardarCumpleaños.splice(indice,0,Guardardo);
+                             idPrimerCumpleañero = Guardardo.id
+                             GuardarCumpleaños.splice(indiceCumpleañeroTal,1);
+                             GuardarCumpleaños.splice(indice,0,Guardardo);
                         }
                     }    
                 }   
-             );
-             indice++;
+            );
+
+            indice++;
         }
     }
-
     async function ReemplazarCumpleañero(){
 
         console.log('Ingresa el identificador  del Cumpleañero que desees actualizar');
@@ -157,17 +171,26 @@ async function main()
                 return valorActual.id == Buscar.id; 
             } 
         );
-        
-        let indiceActualizado = indiceEncontrado + 1;
-
-            let Actualizado = await prompts(UnCumpleañero);       
+        if(indiceEncontrado == -1){
+            console.log("Indice no encontrado");
+            Que_Desea_Hacer();
+        }else{
+            let CumpleañeroActualizado = await prompts(UnCumpleañero);       
             const RespuestaActualizada = 
             {   
-               id: indiceActualizado, nombre: Actualizado.nombre, apellido: Actualizado.apellido, Año_De_Nacimiento: Actualizado.Año_De_Nacimiento, Mes_De_Nacimiento: Actualizado.Mes_De_Nacimiento, Dia_De_Nacimiento: Actualizado.Dia_De_Nacimiento, Me_Gusta: Actualizado.Me_Gusta 
+               id: Buscar.id,
+               nombre: CumpleañeroActualizado.nombre, 
+               apellido: CumpleañeroActualizado.apellido, 
+               Año_De_Nacimiento: CumpleañeroActualizado.Año_De_Nacimiento, 
+               Mes_De_Nacimiento: CumpleañeroActualizado.Mes_De_Nacimiento, 
+               Dia_De_Nacimiento: CumpleañeroActualizado.Dia_De_Nacimiento, 
+               Me_Gusta: CumpleañeroActualizado.Me_Gusta 
             };
 
             GuardarCumpleaños[indiceEncontrado] = RespuestaActualizada;
             Que_Desea_Hacer();
+        }
+
     }
     async function Eliminar() {
         console.log('Ingresa el identificador  del Cumpleañero que desees eliminar');
@@ -187,46 +210,10 @@ async function main()
             } 
         );
 
-        let minimoId = indiceEncontrado;
-
         GuardarCumpleaños.splice(indiceEncontrado,1);
-
-        GuardarCumpleaños
-        .forEach(
-           function(valorActual){ 
-
-              const idActual = valorActual.id;
-            if(idActual > minimoId){
-                minimoId = idActual
-                }
-
-             minimoId = minimoId + 1;
-             contador = minimoId;
-       
-         });
-
-   console.log(minimoId);
-   console.log(arregloCargadoDeArchivo);
-     
-        const Vacio = 
-        {   
-           id:indiceEncontrado + 1,
-           nombre: null,
-           apellido: null,
-           Año_De_Nacimiento: null, 
-           Mes_De_Nacimiento: null,
-           Dia_De_Nacimiento: null,
-           Me_Gusta: null 
-        };
-        
-        if(indiceEncontrado != -1){
-            GuardarCumpleaños.splice(indiceEncontrado , 1 , Vacio);
-        }
 
         Que_Desea_Hacer();
     }
-
-    Que_Desea_Hacer();
-
+    
 }
 main();
