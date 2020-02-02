@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var _02_filtrer_1 = require("./02-filtrer");
 function main() {
     var arregloEstudiantes = [
         { id: 1, nombre: 'Ariel', nota: 7 },
@@ -13,7 +16,7 @@ function main() {
         .forEach(function (valorActual, indice, arreglo) {
         console.log(valorActual.nota);
     });
-    //console.log(respuestaForEach);// undefained
+    console.log(respuestaForEach); // undefained
     //Map -> Transformar el arreglo
     // Enviamos -> valorActual modificado
     // RECIBIR -> Nuevo arreglo 
@@ -22,23 +25,24 @@ function main() {
         var nuevoObjeto = {
             id: valorActual.id,
             nombre: valorActual.nombre,
-            // nota: valorActual.nota,
+            nota: valorActual.nota,
             nota20: valorActual.nota * 2
         };
         return nuevoObjeto;
     });
-    //console.log('RespuestaMap', respuestaMap);
-    //console.log('Arreglo de Estudiantes', arregloEstudiantes);
+    console.log('RespuestaMap', respuestaMap);
+    console.log('Arreglo de Estudiantes', arregloEstudiantes);
     // Filter --> filtrar el arreglo
     // Enviamos -> Nuevo arreglo con valores filtrados 
     var respuestaFilter = arregloEstudiantes
         .filter(function (valorActual, i, arreglo) {
         var condicion7 = valorActual.nota >= 7;
         var condicion5 = valorActual.nota < 5;
+        //Condiciones es un truty o un false
         return condicion7 || condicion5;
     });
-    //console.log('respuestaFilter', respuestaFilter);
-    //console.log('arregloEstudiates', arregloEstudiantes);
+    console.log('respuestaFilter', respuestaFilter);
+    console.log('arregloEstudiates', arregloEstudiantes);
     // And -> EVERY(tODOS CUMPLEN ) / Or -> some (uno cumpla)
     // Some -> Devuelve verdadero o falso dependiendo de la condicion
     //         Si alguno cumple devuelve true
@@ -51,8 +55,8 @@ function main() {
         //Condicion truty o true
         return condicion;
     });
-    //console.log('respuestaSome', respuestaSome);
-    //console.log('arreglo Estudiantes', arregloEstudiantes);
+    console.log('respuestaSome', respuestaSome);
+    console.log('arreglo Estudiantes', arregloEstudiantes);
     // EVERY -> Devuelve verdadero o falso dependiendo de la condicion
     //         Si TODOS  cumpleN devuelve true
     //         Si ninguno cumple devuelve false
@@ -78,6 +82,14 @@ function main() {
     console.log('respuestaReduce', respuestaReduce);
     console.log('Promedio', respuestaReduce / arregloEstudiantes.length); // para dividir por la 
     console.log('repuestaArreglo', arregloEstudiantes);
+    var respuestaFilterNuestro = _02_filtrer_1.filter(arregloEstudiantes, function (valorActual, i, arr) {
+        console.log('Valor', valorActual);
+        console.log('Indice', i);
+        console.log('Arreglo', arr);
+        return valorActual.nota >= 7;
+    });
+    console.log('respuestaFilterNuestro', respuestaFilterNuestro);
+    console.log('valorEstudiantes', arregloEstudiantes);
 }
 ;
 main();

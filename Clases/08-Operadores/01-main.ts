@@ -1,3 +1,5 @@
+import { filter } from './02-filtrer';
+
 function main(){
     const arregloEstudiantes: any = [  // no es una buena practica tiparle con any pero funciona
         {id:1, nombre: 'Ariel', nota: 7},
@@ -21,21 +23,21 @@ function main(){
 
        );
 
-       //console.log(respuestaForEach);// undefained
+       console.log(respuestaForEach);// undefained
 
 
        //Map -> Transformar el arreglo
        // Enviamos -> valorActual modificado
        // RECIBIR -> Nuevo arreglo 
 
-       const respuestaMap = arregloEstudiantes
-       .map(
+       const respuestaMap = arregloEstudiantes.map(
+           
            function(valorActual, i, arreglo){
                const nuevoObjeto = {
             
                    id: valorActual.id,
                    nombre: valorActual.nombre,
-                  // nota: valorActual.nota,
+                   nota: valorActual.nota,
                    nota20: valorActual.nota*2
                };
 
@@ -44,8 +46,8 @@ function main(){
            }
        );
 
-       //console.log('RespuestaMap', respuestaMap);
-       //console.log('Arreglo de Estudiantes', arregloEstudiantes);
+       console.log('RespuestaMap', respuestaMap);
+       console.log('Arreglo de Estudiantes', arregloEstudiantes);
 
        // Filter --> filtrar el arreglo
        // Enviamos -> Nuevo arreglo con valores filtrados 
@@ -55,12 +57,13 @@ function main(){
            function(valorActual, i, arreglo){
               const condicion7 = valorActual.nota >= 7;
               const condicion5 = valorActual.nota < 5;
+              //Condiciones es un truty o un false
               return condicion7 || condicion5;
            }
        );
 
-       //console.log('respuestaFilter', respuestaFilter);
-       //console.log('arregloEstudiates', arregloEstudiantes);
+       console.log('respuestaFilter', respuestaFilter);
+       console.log('arregloEstudiates', arregloEstudiantes);
         
        // And -> EVERY(tODOS CUMPLEN ) / Or -> some (uno cumpla)
        // Some -> Devuelve verdadero o falso dependiendo de la condicion
@@ -79,8 +82,8 @@ function main(){
             }
         );
 
-        //console.log('respuestaSome', respuestaSome);
-        //console.log('arreglo Estudiantes', arregloEstudiantes);
+        console.log('respuestaSome', respuestaSome);
+        console.log('arreglo Estudiantes', arregloEstudiantes);
 
 
 
@@ -105,6 +108,7 @@ function main(){
             console.log('arregloEstudiantes', arregloEstudiantes);
 
 
+
      // Reduce --> Devuelve un valor 
      // Enviamos -> Calculo 
      // Recibir --> Valor 
@@ -127,6 +131,20 @@ function main(){
       console.log('repuestaArreglo', arregloEstudiantes);
 
 
+
+    const respuestaFilterNuestro = filter(
+        arregloEstudiantes,
+        function(valorActual, i, arr){
+            console.log('Valor', valorActual);
+            console.log('Indice', i);
+            console.log('Arreglo', arr);
+            return valorActual.nota >= 7
+        }
+
+    );
+
+    console.log('respuestaFilterNuestro', respuestaFilterNuestro);
+    console.log('valorEstudiantes', arregloEstudiantes);
 
 
 };
