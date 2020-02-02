@@ -115,12 +115,8 @@ async function main()
     }
 
     function OrdenarCumpleañeros(){
-
         let indice = 0;
-                    
-        
-
-            let idPrimerCumpleañero = GuardarCumpleaños[indice].id
+        let idPrimerCumpleañero = GuardarCumpleaños[indice].id
         while(indice < GuardarCumpleaños.length){
             GuardarCumpleaños.forEach(
                 function (CumpleañeroTal, indiceCumpleañeroTal) {
@@ -137,18 +133,10 @@ async function main()
                             GuardarCumpleaños.splice(indice,0,Guardardo);
                         }
                     }    
-
-                //console.log(GuardarCumpleaños);
-             
-                } 
-                      
+                }   
              );
-
              indice++;
-             
         }
-
-        console.log(GuardarCumpleaños);
     }
 
     async function ReemplazarCumpleañero(){
