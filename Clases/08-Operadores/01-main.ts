@@ -94,9 +94,8 @@ function main(){
        // Recibir -> Booleano
 
 
-       const respuestaEvery = arregloEstudiantes
-
-            .every(
+       const respuestaEvery = arregloEstudiantes.every(
+           
                 function(valorActual, i, arr){
                     const condicion = valorActual.nota >= 4;
                     return condicion;

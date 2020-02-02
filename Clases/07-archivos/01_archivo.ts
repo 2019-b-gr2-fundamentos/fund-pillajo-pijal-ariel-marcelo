@@ -137,16 +137,20 @@ let minimoId = -1;
 
 arregloCargadoDeArchivo.forEach(// No envia nada ni recibe nada
                                 // Iterar (repetir un proceso varias veces has alcanzar la meta)
-    function(valorActual){ 
+    function(valorActual, indiValor){ 
         
         const idActual = valorActual.id;
         if(idActual > minimoId){
             minimoId = idActual
+            console.log('FORRR', indiValor );
     }
     minimoId = minimoId + 1;
     contador = minimoId;
+    console.log('FORRR', indiValor );
     }
 );
+
+
 
 
 const idABuscar = await prompts(
@@ -222,7 +226,7 @@ const EstudianteEncontrado = arregloEstudiantes.find(
     const nuevoContenido = 'Temgo hambre :( \n';
     
     //Aqui esta borrando el archivo del ejemplo.txt
-    escribirArchivo('./ejemplo.txt','');
+    //escribirArchivo('./ejemplo.txt','');
 
     // como el texto ya se guardo en ambas variables antes de porrarse del
     // ejemplo txt, entonces se impriomira el contenido del archivo 

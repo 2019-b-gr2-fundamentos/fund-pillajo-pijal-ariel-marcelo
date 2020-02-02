@@ -20,8 +20,7 @@ function main() {
     //Map -> Transformar el arreglo
     // Enviamos -> valorActual modificado
     // RECIBIR -> Nuevo arreglo 
-    var respuestaMap = arregloEstudiantes
-        .map(function (valorActual, i, arreglo) {
+    var respuestaMap = arregloEstudiantes.map(function (valorActual, i, arreglo) {
         var nuevoObjeto = {
             id: valorActual.id,
             nombre: valorActual.nombre,
@@ -62,8 +61,7 @@ function main() {
     //         Si ninguno cumple devuelve false
     // Enviamos -> Condicion 
     // Recibir -> Booleano
-    var respuestaEvery = arregloEstudiantes
-        .every(function (valorActual, i, arr) {
+    var respuestaEvery = arregloEstudiantes.every(function (valorActual, i, arr) {
         var condicion = valorActual.nota >= 4;
         return condicion;
     });

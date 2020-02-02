@@ -1,6 +1,6 @@
 import { Cumpleañeros } from "./interfaces/Cumpleañeros";
 import * as prompts from './node_modules/prompts';
-import { leerArchivo } from "./leer-Archivo";
+import { leerArchivo } from "./leer-Cumples";
 
 async function main()
 {
@@ -8,9 +8,9 @@ async function main()
     let GuardarCumpleaños: Cumpleañeros[] = [];
     let contador = 1;
 
-
-
-
+    // Se guarda la lista ya Guardada
+    const ListadeCumpleañeros = leerArchivo('./ListadeCumpleañeros.txt');
+    GuardarCumpleaños = JSON.parse(ListadeCumpleañeros)
 
     const UnCumpleañero  =
     [
@@ -45,25 +45,11 @@ async function main()
             message: 'Dime lo que te Gusta'
         }
 
-    ]
-    function HayAlgoEnArchivo(){
-    const ArchivoLeido = leerArchivo(
-        './archivo-a-Exportar.txt',
-    );
+    ];
     
-    //try{
-        GuardarCumpleaños = JSON.parse(ArchivoLeido);
-    //}
-    //catch(error){
-        //GuardarCumpleaños = [];
-        //console.log("Error en el parseado");
-        
-    //}
-
-}
     async function Que_Desea_Hacer()
      {
-         HayAlgoEnArchivo();
+
         let Decide = await prompts
          ({
            type: 'text',
@@ -75,7 +61,7 @@ async function main()
          {
              case '1': 
             { 
-              CrearDato();
+              CrearCumpleañero();
               break;
             }     
              case '2': 
@@ -102,22 +88,70 @@ async function main()
         
     }
 
-    async function CrearDato()
+    async function CrearCumpleañero()
     {
         let DatosCumpleañeros = await prompts (UnCumpleañero);
         
         const Respuesta = 
         {   
-            id: contador, nombre: DatosCumpleañeros.nombre, apellido: DatosCumpleañeros.apellido, Año_De_Nacimiento: DatosCumpleañeros.Año_De_Nacimiento,  Mes_De_Nacimiento: DatosCumpleañeros.Mes_De_Nacimiento, Dia_De_Nacimiento: DatosCumpleañeros.Dia_De_Nacimiento, Me_Gusta: DatosCumpleañeros.Me_Gusta 
+            id: contador,
+            nombre: DatosCumpleañeros.nombre,
+            apellido: DatosCumpleañeros.apellido,
+            Año_De_Nacimiento: DatosCumpleañeros.Año_De_Nacimiento,
+            Mes_De_Nacimiento: DatosCumpleañeros.Mes_De_Nacimiento,
+            Dia_De_Nacimiento: DatosCumpleañeros.Dia_De_Nacimiento,
+            Me_Gusta: DatosCumpleañeros.Me_Gusta 
         };
 
         GuardarCumpleaños.push(Respuesta); 
-        console.log(GuardarCumpleaños[contador-1]);
-        contador = contador + 1; 
+        contador = contador + 1;
         Que_Desea_Hacer();
     }
 
-    async function Actualizar(){
+    function Actualizar() {
+
+        OrdenarCumpleañeros()
+        ReemplazarCumpleañero()
+    }
+
+    function OrdenarCumpleañeros(){
+
+        let indice = 0;
+                    
+        
+
+            let idPrimerCumpleañero = GuardarCumpleaños[indice].id
+        while(indice < GuardarCumpleaños.length){
+            GuardarCumpleaños.forEach(
+                function (CumpleañeroTal, indiceCumpleañeroTal) {
+                    console.log('indiceCumpleañeroTal',indiceCumpleañeroTal);
+                    console.log('indice',indice);
+
+                    if(indice <= indiceCumpleañeroTal){
+
+                        if(idPrimerCumpleañero > CumpleañeroTal.id){ 
+                             console.log('indiceCumpleañeroTal',indiceCumpleañeroTal);
+                             console.log('indice',indice);
+                             let Guardardo = CumpleañeroTal;
+                            GuardarCumpleaños.splice(indiceCumpleañeroTal,1);
+                            GuardarCumpleaños.splice(indice,0,Guardardo);
+                        }
+                    }    
+
+                //console.log(GuardarCumpleaños);
+             
+                } 
+                      
+             );
+
+             indice++;
+             
+        }
+
+        console.log(GuardarCumpleaños);
+    }
+
+    async function ReemplazarCumpleañero(){
 
         console.log('Ingresa el identificador  del Cumpleañero que desees actualizar');
         console.log(GuardarCumpleaños);

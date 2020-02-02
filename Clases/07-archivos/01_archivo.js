@@ -135,13 +135,15 @@ function main() {
                     minimoId = -1;
                     arregloCargadoDeArchivo.forEach(// No envia nada ni recibe nada
                     // Iterar (repetir un proceso varias veces has alcanzar la meta)
-                    function (valorActual) {
+                    function (valorActual, indiValor) {
                         var idActual = valorActual.id;
                         if (idActual > minimoId) {
                             minimoId = idActual;
+                            console.log('FORRR', indiValor);
                         }
                         minimoId = minimoId + 1;
                         contador = minimoId;
+                        console.log('FORRR', indiValor);
                     });
                     return [4 /*yield*/, prompts({
                             type: 'number',
@@ -191,7 +193,10 @@ function main() {
                     _03_Escribir_Archivo_1.escribirArchivo('./ejemplo.txt', arregloTexto);
                     TextoLeido = _02_leer_archivo_1.leerArchivo('./ejemplo.txt');
                     nuevoContenido = 'Temgo hambre :( \n';
-                    _03_Escribir_Archivo_1.escribirArchivo('./ejemplo.txt', '');
+                    //Aqui esta borrando el archivo del ejemplo.txt
+                    //escribirArchivo('./ejemplo.txt','');
+                    // como el texto ya se guardo en ambas variables antes de porrarse del
+                    // ejemplo txt, entonces se impriomira el contenido del archivo 
                     console.log(TextoLeido + nuevoContenido);
                     return [2 /*return*/];
             }

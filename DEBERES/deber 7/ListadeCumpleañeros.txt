@@ -1,0 +1,20 @@
+[
+{"id":100,
+"nombre":"Pepito",
+"apellido":"Paucara",
+"Año_De_Nacimiento": 1938, 
+"Mes_De_Nacimiento":"Abril",
+"Dia_De_Nacimiento":7,
+"Me_Gusta":"Peliculas"},
+
+{"id":50,
+"nombre":"Juanito", 
+"apellido":"Aventura",
+"Año_De_Nacimiento": 1938,
+ "Mes_De_Nacimiento":"Abril",
+ "Dia_De_Nacimiento":7,
+ "Me_Gusta":"Dormir"}
+
+]
+
+ 
