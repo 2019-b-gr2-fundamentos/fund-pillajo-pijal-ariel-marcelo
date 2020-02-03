@@ -14,15 +14,11 @@ function main(){
 // Recibimos -> Nada
 
 
-    const respuestaForEach = arregloEstudiantes
-         .forEach(
+    const respuestaForEach = arregloEstudiantes.forEach(
               function(valorActual, indice, arreglo){
               console.log(valorActual.nota);
-              
              }
-
        );
-
        console.log(respuestaForEach);// undefained
 
 
@@ -31,7 +27,7 @@ function main(){
        // RECIBIR -> Nuevo arreglo 
 
        const respuestaMap = arregloEstudiantes.map(
-           
+
            function(valorActual, i, arreglo){
                const nuevoObjeto = {
             
@@ -40,32 +36,31 @@ function main(){
                    nota: valorActual.nota,
                    nota20: valorActual.nota*2
                };
-
                return nuevoObjeto
-
            }
        );
-
        console.log('RespuestaMap', respuestaMap);
        console.log('Arreglo de Estudiantes', arregloEstudiantes);
 
        // Filter --> filtrar el arreglo
+
        // Enviamos -> Nuevo arreglo con valores filtrados 
 
-       const respuestaFilter = arregloEstudiantes
-       .filter(
+       const respuestaFilter = arregloEstudiantes.filter(
+
            function(valorActual, i, arreglo){
+
               const condicion7 = valorActual.nota >= 7;
               const condicion5 = valorActual.nota < 5;
               //Condiciones es un truty o un false
               return condicion7 || condicion5;
            }
        );
-
        console.log('respuestaFilter', respuestaFilter);
        console.log('arregloEstudiates', arregloEstudiantes);
         
        // And -> EVERY(tODOS CUMPLEN ) / Or -> some (uno cumpla)
+
        // Some -> Devuelve verdadero o falso dependiendo de la condicion
        //         Si alguno cumple devuelve true
        //         Si ninguno cumple devuelve false
@@ -73,15 +68,15 @@ function main(){
        // Recibir -> Booleano
 
 
-       const respuestaSome = arregloEstudiantes
-        .some(
+       const respuestaSome = arregloEstudiantes.some(
+
             function(valorActual, i, arr){
+
                 const condicion = valorActual.nota < 4;
                 //Condicion truty o true
                 return condicion;
             }
         );
-
         console.log('respuestaSome', respuestaSome);
         console.log('arreglo Estudiantes', arregloEstudiantes);
 
@@ -99,14 +94,11 @@ function main(){
                 function(valorActual, i, arr){
                     const condicion = valorActual.nota >= 4;
                     return condicion;
-
                 }
             );
 
             console.log('respuestaEvery', respuestaEvery);
             console.log('arregloEstudiantes', arregloEstudiantes);
-
-
 
      // Reduce --> Devuelve un valor 
      // Enviamos -> Calculo 
@@ -114,15 +106,16 @@ function main(){
      
      // reduce resive 2 valores
 
-     const respuestaReduce = arregloEstudiantes
-      .reduce(
+     const respuestaReduce = arregloEstudiantes.reduce(
+
           function(acumuldor, valorActual, i, arr){ //
             const calculo = acumuldor + valorActual.nota;
+            console.log(acumuldor);
             return calculo;
 
           },
 
-          0 // VAlor es donde empieza
+           0  //VAlor es donde empieza
       );
 
       console.log('respuestaReduce', respuestaReduce);
@@ -132,7 +125,9 @@ function main(){
 
 
     const respuestaFilterNuestro = filter(
+
         arregloEstudiantes,
+        
         function(valorActual, i, arr){
             console.log('Valor', valorActual);
             console.log('Indice', i);

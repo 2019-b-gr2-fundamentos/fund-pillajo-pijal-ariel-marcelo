@@ -12,8 +12,7 @@ function main() {
     // Operador -> FOREACH
     // Enviamos -> NADA
     // Recibimos -> Nada
-    var respuestaForEach = arregloEstudiantes
-        .forEach(function (valorActual, indice, arreglo) {
+    var respuestaForEach = arregloEstudiantes.forEach(function (valorActual, indice, arreglo) {
         console.log(valorActual.nota);
     });
     console.log(respuestaForEach); // undefained
@@ -33,8 +32,7 @@ function main() {
     console.log('Arreglo de Estudiantes', arregloEstudiantes);
     // Filter --> filtrar el arreglo
     // Enviamos -> Nuevo arreglo con valores filtrados 
-    var respuestaFilter = arregloEstudiantes
-        .filter(function (valorActual, i, arreglo) {
+    var respuestaFilter = arregloEstudiantes.filter(function (valorActual, i, arreglo) {
         var condicion7 = valorActual.nota >= 7;
         var condicion5 = valorActual.nota < 5;
         //Condiciones es un truty o un false
@@ -48,8 +46,7 @@ function main() {
     //         Si ninguno cumple devuelve false
     // Enviamos -> Condicion 
     // Recibir -> Booleano
-    var respuestaSome = arregloEstudiantes
-        .some(function (valorActual, i, arr) {
+    var respuestaSome = arregloEstudiantes.some(function (valorActual, i, arr) {
         var condicion = valorActual.nota < 4;
         //Condicion truty o true
         return condicion;
@@ -71,12 +68,11 @@ function main() {
     // Enviamos -> Calculo 
     // Recibir --> Valor 
     // reduce resive 2 valores
-    var respuestaReduce = arregloEstudiantes
-        .reduce(function (acumuldor, valorActual, i, arr) {
+    var respuestaReduce = arregloEstudiantes.reduce(function (acumuldor, valorActual, i, arr) {
         var calculo = acumuldor + valorActual.nota;
+        console.log(acumuldor);
         return calculo;
-    }, 0 // VAlor es donde empieza
-    );
+    });
     console.log('respuestaReduce', respuestaReduce);
     console.log('Promedio', respuestaReduce / arregloEstudiantes.length); // para dividir por la 
     console.log('repuestaArreglo', arregloEstudiantes);
