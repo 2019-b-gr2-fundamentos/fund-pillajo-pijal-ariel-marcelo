@@ -28,7 +28,7 @@ export function filter(
           const respuestaFuncion = Proceso(arreglo[i], i, arreglo, );
 
           if(respuestaFuncion == true){
-             arregloFiltrado.push()
+             arregloFiltrado.push(Proceso(arreglo[i]))
           }
       }
     return arregloFiltrado;
