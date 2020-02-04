@@ -1,4 +1,9 @@
 import { filter } from './02-filtrer';
+import { map } from './03-Map';
+import { foreach }  from './04-forEach';
+import { miSome } from './05-some'
+import { MiEvery } from './06-Every'
+import { MiReduce } from './07-Reduce'
 
 function main(){
     const arregloEstudiantes: any = [  // no es una buena practica tiparle con any pero funciona
@@ -16,7 +21,7 @@ function main(){
 
     const respuestaForEach = arregloEstudiantes.forEach(
               function(valorActual, indice, arreglo){
-              console.log(valorActual.nota);
+              console.log(valorActual);
              }
        );
        console.log(respuestaForEach);// undefained
@@ -43,8 +48,8 @@ function main(){
        console.log('Arreglo de Estudiantes', arregloEstudiantes);
 
        // Filter --> filtrar el arreglo
-
-       // Enviamos -> Nuevo arreglo con valores filtrados 
+       // Enviamos una condicion
+       // recibimos -> Nuevo arreglo con valores filtrados 
 
        const respuestaFilter = arregloEstudiantes.filter(
 
@@ -129,16 +134,86 @@ function main(){
         arregloEstudiantes,
         
         function(valorActual, i, arr){
-            console.log('Valor', valorActual);
-            console.log('Indice', i);
-            console.log('Arreglo', arr);
             return valorActual.nota >= 7
         }
-
     );
 
     console.log('respuestaFilterNuestro', respuestaFilterNuestro);
     console.log('valorEstudiantes', arregloEstudiantes);
+
+    const respuestaMapNuestro = map(
+
+        arregloEstudiantes,
+
+        function(valorActual){
+
+            const respuestaFuncion = {
+                id: valorActual.id,
+                nombre: valorActual.nombre,
+                nota: valorActual.nota,
+                nota20: valorActual.nota*20
+            }
+
+            return respuestaFuncion;
+        }
+
+    );
+
+    console.log('respuestaMapNuestro', respuestaMapNuestro);
+    console.log('valorEstudiantes', arregloEstudiantes);
+     
+    
+    foreach(
+
+        arregloEstudiantes,
+
+        function(valorActual, indice, arreglo){
+
+            console.log('Mi forEach', valorActual.id);
+            //console.log('Mi forEach', indice);
+            //console.log('Mi forEach', arreglo);
+        }
+    );
+
+    const RespuestaMiSome = miSome(
+        arregloEstudiantes,
+        function(valorActual){
+            return valorActual.id > 100
+
+        }
+    );
+
+    console.log('RespuestaMisome', RespuestaMiSome);
+
+    const RespuestaMiEvery = MiEvery(
+        arregloEstudiantes,
+        function(valorActual){
+            return valorActual.id < 5
+        }
+    );
+ 
+    console.log('RespuestaMiEvery', RespuestaMiEvery);
+
+
+    const respuestaMiReduce = MiReduce(
+        arregloEstudiantes,
+        function(acumlador, valor){
+
+            const calculo2 = acumlador + valor.nota
+            console.log(acumlador);
+            return calculo2;
+        },
+        4
+    );
+
+
+console.log("RespuestaMiReduce", respuestaMiReduce);
+
+
+
+
+
+    
 
 
 };

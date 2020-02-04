@@ -12,25 +12,32 @@ export function restar(numUno, numDos){ // podemos simplemente no usar el valor 
 }
 calcular(sumar, 1, 2); // 3
 calcular(restar, 5, 3); // 2
+
 */
 
 export function filter(
 
     arreglo: any[],
-    Proceso: (valorActual: any, indice?: number, arreglo?: any[] ) => boolean
-    
+    Proceso: (valorActual: any, 
+              indice?: number,
+              arreglo?: any[] ) => boolean
 ): any[]{
 
        const arregloFiltrado = [];
 
        for(let i = 0; i < arreglo.length; i++ ){
 
-          const respuestaFuncion = Proceso(arreglo[i], i, arreglo, );
+            const respuestaFuncion = Proceso(
+                arreglo[i],
+                i,
+                arreglo, );
+            console.log(arreglo[i]);
+            console.log(i)
+            if(respuestaFuncion == true){
+                 arregloFiltrado.push(arreglo[i]);
+            }
+       }
 
-          if(respuestaFuncion == true){
-             arregloFiltrado.push(Proceso(arreglo[i]))
-          }
-      }
     return arregloFiltrado;
  }
 

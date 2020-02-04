@@ -1,6 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var _02_filtrer_1 = require("./02-filtrer");
+var _03_Map_1 = require("./03-Map");
+var _04_forEach_1 = require("./04-forEach");
+var _05_some_1 = require("./05-some");
+var _06_Every_1 = require("./06-Every");
+var _07_Reduce_1 = require("./07-Reduce");
 function main() {
     var arregloEstudiantes = [
         { id: 1, nombre: 'Ariel', nota: 7 },
@@ -13,7 +18,7 @@ function main() {
     // Enviamos -> NADA
     // Recibimos -> Nada
     var respuestaForEach = arregloEstudiantes.forEach(function (valorActual, indice, arreglo) {
-        console.log(valorActual.nota);
+        console.log(valorActual);
     });
     console.log(respuestaForEach); // undefained
     //Map -> Transformar el arreglo
@@ -31,7 +36,8 @@ function main() {
     console.log('RespuestaMap', respuestaMap);
     console.log('Arreglo de Estudiantes', arregloEstudiantes);
     // Filter --> filtrar el arreglo
-    // Enviamos -> Nuevo arreglo con valores filtrados 
+    // Enviamos una condicion
+    // recibimos -> Nuevo arreglo con valores filtrados 
     var respuestaFilter = arregloEstudiantes.filter(function (valorActual, i, arreglo) {
         var condicion7 = valorActual.nota >= 7;
         var condicion5 = valorActual.nota < 5;
@@ -72,18 +78,46 @@ function main() {
         var calculo = acumuldor + valorActual.nota;
         console.log(acumuldor);
         return calculo;
-    });
+    }, 0 //VAlor es donde empieza
+    );
     console.log('respuestaReduce', respuestaReduce);
     console.log('Promedio', respuestaReduce / arregloEstudiantes.length); // para dividir por la 
     console.log('repuestaArreglo', arregloEstudiantes);
     var respuestaFilterNuestro = _02_filtrer_1.filter(arregloEstudiantes, function (valorActual, i, arr) {
-        console.log('Valor', valorActual);
-        console.log('Indice', i);
-        console.log('Arreglo', arr);
         return valorActual.nota >= 7;
     });
     console.log('respuestaFilterNuestro', respuestaFilterNuestro);
     console.log('valorEstudiantes', arregloEstudiantes);
+    var respuestaMapNuestro = _03_Map_1.map(arregloEstudiantes, function (valorActual) {
+        var respuestaFuncion = {
+            id: valorActual.id,
+            nombre: valorActual.nombre,
+            nota: valorActual.nota,
+            nota20: valorActual.nota * 20
+        };
+        return respuestaFuncion;
+    });
+    console.log('respuestaMapNuestro', respuestaMapNuestro);
+    console.log('valorEstudiantes', arregloEstudiantes);
+    _04_forEach_1.foreach(arregloEstudiantes, function (valorActual, indice, arreglo) {
+        console.log('Mi forEach', valorActual.id);
+        //console.log('Mi forEach', indice);
+        //console.log('Mi forEach', arreglo);
+    });
+    var RespuestaMiSome = _05_some_1.miSome(arregloEstudiantes, function (valorActual) {
+        return valorActual.id > 100;
+    });
+    console.log('RespuestaMisome', RespuestaMiSome);
+    var RespuestaMiEvery = _06_Every_1.MiEvery(arregloEstudiantes, function (valorActual) {
+        return valorActual.id < 5;
+    });
+    console.log('RespuestaMiEvery', RespuestaMiEvery);
+    var respuestaMiReduce = _07_Reduce_1.MiReduce(arregloEstudiantes, function (acumlador, valor) {
+        var calculo2 = acumlador + valor.nota;
+        console.log(acumlador);
+        return calculo2;
+    }, 4);
+    console.log("RespuestaMiReduce", respuestaMiReduce);
 }
 ;
 main();

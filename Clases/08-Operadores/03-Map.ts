@@ -4,7 +4,7 @@ export function map(
     Proceso: (
         valorActual: any, 
         indice?: number, 
-        arreglo?: any[] ) => boolean
+        arreglo?: any[] ) => any
     
 ): any[]{
 
