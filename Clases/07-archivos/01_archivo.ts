@@ -1,16 +1,45 @@
 import { leerArchivo } from "./02-leer-archivo"
-import { escribirArchivo } from "./03-Escribir-Archivo";
 import { Estudiante } from "./interfaces/estudiante.interface";
 import * as prompts from 'prompts';
-// como vamos a trabajar con el prompt que convierte en promesas trabajamos con una funcion asincrona s
-async function main(){
-let contador = 1;
-const contenidoArchivo = leerArchivo(
-    './ejemplo.txt'
-);
-    console.log('contenidoArchivo', contenidoArchivo);
-    //const arregloCargadoDeArchivo = JSON.parse('{"nombre":adrian}');
+import { escribirArchivo } from "./03-Escribir-Archivo";
+
+
+// * Este programa lee un archivio .txt y lo Parsea, se le añade a un arreglo 
+// y despues pide datos que seran agregados al mismo arreglo
+
+
+// PARSEAR --> TEXTO --> Estructura en memoria 
+
+/*
+    const arregloCargadoDeArchivo = JSON.parse('{"nombre":"adrian"}');  // Esta es la manera correcta de
+                                                //  escribir una estructura en texto para luego parsearla
+    console.log('contenidoArchivo', arregloCargadoDeArchivo );
+*/
     
+/*
+// se identifica como tipo texto
+{
+    "nombre": "Ariel"
+}
+
+// otro tipo seria el siguiente 
+<universidad>
+   <facultad></facultad>
+</universidad>
+
+*/
+
+// como vamos a trabajar con el prompt que convierte en promesas trabajamos 
+//con una funcion asincrona 
+
+async function main(){
+
+let contador = 1;
+
+const contenidoArchivo = leerArchivo( './ejemplo.txt');
+
+    console.log('contenidoArchivo', contenidoArchivo);
+
 let arregloCargadoDeArchivo;
 
 try{
@@ -19,11 +48,62 @@ try{
 } catch(error){
     arregloCargadoDeArchivo = [];
     console.error('Error parseado');
-    
-
 }
 
-/*
+    console.log('nuevo arreglo parseado', arregloCargadoDeArchivo); 
+
+/* Aqui podemos definir un arrglo en caso de que no se logre parsear el 
+   achivo .txt en un archivo JSON 
+
+try{
+       arregloCargadoDeArchivo = JSON.parse(contenidoArchivo);
+
+   }catch(error){
+
+      arregloCargadoDeArchivo = [
+          {"id":1, "nombre":"Juanito"},
+          {"id":2, "nombre":"Pepito"}
+       ];
+
+      console.error('Error parseado archivo');   
+   }
+*/  
+
+    const arregloEstudiantes: Estudiante[] = arregloCargadoDeArchivo;
+
+    const arregloPreguntas =[
+        {
+            name: 'nombre',
+            type: 'text',
+            message: 'Ingresa Nombre'
+
+        }
+    ];
+
+     const respuestaEstudiante = await  prompts(arregloPreguntas);
+
+     const NuevoRegistro = {
+       id: contador,
+       nombre: respuestaEstudiante.nombre
+     };
+
+     contador = contador + 1;
+     arregloEstudiantes.push(NuevoRegistro);
+ 
+     const respuestaEstudianteDos = await prompts(arregloPreguntas);
+
+     const NuevoRegistroUno = {
+        id: contador,
+        nombre: respuestaEstudianteDos.nombre
+     };
+
+     arregloEstudiantes.push(NuevoRegistroUno);
+
+     console.log('Arreglo Estudiantes', arregloEstudiantes);
+    
+/* Algunos errores en javascript donde trow new NombreDelError nos ayudara
+   a indicar al uuario que error esta sucediendo 
+
 try{
     
     console.log('1');
@@ -43,67 +123,36 @@ try{
     console.log(':3');
 
 }
+
 */
 
-//OPeradores
-
-let minimoId = -1;
-arregloCargadoDeArchivo
-    .forEach(// No envia nada ni recibe nada
-        //Iterar
-    
-    function(valorActual){ 
-
-        const idActual = valorActual.id;
-        if(idActual > minimoId){
-            minimoId = idActual
-        }
-
-        minimoId = minimoId + 1;
-        contador = minimoId;
-        
-});
-
-
-    const arregloEstudiantes: Estudiante[] = arregloCargadoDeArchivo;
-    const arregloPreguntas =[
-        {
-            type: 'text',
-            name: 'nombre',
-            message: 'Ingresa Nombre'
-        }
-    ];
-
-    const respuestaEstudiante = await  prompts(arregloPreguntas);
-    
-    
-
-   const NuevoRegistro = {
-       id: contador,
-       nombre: respuestaEstudiante.nombre
-   };
-
-
-
-   contador = contador + 1;
-   arregloEstudiantes.push(NuevoRegistro);
- 
-   const respuestaEstudianteDos = await prompts(arregloPreguntas);
-
-   const NuevoRegistroUno = {
-    id: contador,
-    nombre: respuestaEstudianteDos.nombre
-};
-contador = contador + 1;
-arregloEstudiantes.push(NuevoRegistroUno);
-
-
-
+// Ahora vamos a sobreescribir algun dato del arreglo
 
 console.log('Cual usuario quieres editar?');
 console.log(arregloEstudiantes);
 
 // Operadores !!! --> Reemplazar al !For
+
+let minimoId = -1;
+
+arregloCargadoDeArchivo.forEach(// No envia nada ni recibe nada
+                                // Iterar (repetir un proceso varias veces has alcanzar la meta)
+    function(valorActual, indiValor){ 
+        
+        const idActual = valorActual.id;
+        if(idActual > minimoId){
+            minimoId = idActual
+            console.log('FORRR', indiValor );
+    }
+    minimoId = minimoId + 1;
+    contador = minimoId;
+    console.log('FORRR', indiValor );
+    }
+);
+
+
+
+
 const idABuscar = await prompts(
     {
         type: 'number',
@@ -113,14 +162,18 @@ const idABuscar = await prompts(
 )
 
 // esta funcion  acepta otra funcion como dato de entrada
-const indiceEncontrado = arregloEstudiantes.findIndex( // return CONDICION
-     function(valorActual, indice, arreglo){
+//  Remplaza al for 
 
+const indiceEncontrado = arregloEstudiantes.findIndex( // return CONDICION
+
+     function(valorActual, indice, arreglo){
 
          console.log(valorActual);
          console.log(indice);
          console.log(arreglo);
-         return valorActual.id == idABuscar.id; // No devuelbe el indice
+
+         return valorActual.id == idABuscar.id; // No devueve el indice
+
      } // si encuentra devuelve el indice
 )      // no encuentra
 
@@ -144,15 +197,16 @@ const buscar = await prompts(
         message: 'Buscar por ID o por nombre'
     }
 );
+
 console.log("ASTA");
-const EstudianteEncontrado = arregloEstudiantes
-    .find(
-         function(valorActual){
-             console.log(valorActual.nombre)
-             console.log(buscar.nombre)
-         return valorActual.nombre == buscar.nombre;
-        }
-    );
+
+const EstudianteEncontrado = arregloEstudiantes.find(
+    function(valorActual){
+        console.log(valorActual.nombre)
+        console.log(buscar.nombre)
+        return valorActual.nombre == buscar.nombre;
+    }
+);
 
     console.log(EstudianteEncontrado);
 
@@ -164,28 +218,22 @@ const EstudianteEncontrado = arregloEstudiantes
     escribirArchivo(
         './ejemplo.txt',
         arregloTexto
-        );
+    );
 
+   const TextoLeido = leerArchivo('./ejemplo.txt');
+    
+    //Simplmente deficne otro texto
+    const nuevoContenido = 'Temgo hambre :( \n';
+    
+    //Aqui esta borrando el archivo del ejemplo.txt
+    //escribirArchivo('./ejemplo.txt','');
 
+    // como el texto ya se guardo en ambas variables antes de porrarse del
+    // ejemplo txt, entonces se impriomira el contenido del archivo 
 
+    console.log(TextoLeido + nuevoContenido);
 
-/*
-
-// Parsear -> Texto -> Estructura 
-
-
-{
-    "nombre"
-}
-
-<Universidad>
-<hkhkf><sdfkdfsjk>
-
-*/
-
-
-let arregloCargadoDeArchivo;
-
+/* Se ejecuta directamente catch ya que Mama es un texto
 
 try{
     const arregloCargadoDeArchivo = JSON
@@ -195,20 +243,6 @@ try{
     console.error('Error parseado');
 }
 
-
-
-
-
-
-
-  /*  const TextoLeido = leerArchivo();
-
-    const nuevoContenido = 'Temgo hambre :( \n';
-    escribirArchivo('./ejemplo.txt','');
-
-    
-    console.log(TextoLeido + nuevoContenido);
-    */
+*/   
 }
-
 main();
