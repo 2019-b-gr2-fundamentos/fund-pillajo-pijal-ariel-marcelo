@@ -35,6 +35,7 @@ namespace Exam2
           static void Main(String[] args)
           {
 
+              Console.WriteLine("funcionaaaaa");
               string Inicio = Bienvenida();
               int exit = 11, indice = 0,SuMes = 0;
               int SuDia = 0;
